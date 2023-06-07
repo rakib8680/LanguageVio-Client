@@ -7,3 +7,11 @@
 .nav-bar{
     @apply  shadow-md py-7 md:py-0  md:px-10 p-0 pr-2   md:sticky top-0 z-10 md:backdrop-filter md:backdrop-blur-lg md:bg-opacity-20
  };
+
+ .nav-link-active{
+    @apply font-bold text-primary text-lg hover:text-white  hover:bg-primary rounded-none
+ };
+
+.nav-link-passive{
+    @apply text-primary text-lg hover:text-white  hover:bg-primary rounded-none
+}
