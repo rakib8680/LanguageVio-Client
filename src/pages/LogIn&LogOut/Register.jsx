@@ -8,10 +8,11 @@ import GoogleLogin from './GoogleLogin';
 
 const Register = () => {
 
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [showPass, setShowPass] = useState(false)
     const { updateUser, registerUser } = useContext(AuthContext);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         // console.log(data)
@@ -21,7 +22,7 @@ const Register = () => {
             .then((result) => {
                 updateUser(data.name, data.photoURL)
                 toast.success('Successfully registered')
-                // navigate(location?.state?.from.pathname || '/')
+                navigate('/')
             })
             .catch(error => toast.error(error.message));
 

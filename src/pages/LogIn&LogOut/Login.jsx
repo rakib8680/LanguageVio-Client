@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
 
+    const navigate = useNavigate()
     const [showPass, setShowPass] = useState(false)
     const { signInUser, user, } = useContext(AuthContext)
 
@@ -27,7 +28,7 @@ const Login = () => {
         signInUser(data.email, data.password)
             .then(() => {
                 toast.success('Logged in successfully');
-                // navigate('/')
+                navigate('/')
             })
             .catch(error => toast.error(error.message));
 

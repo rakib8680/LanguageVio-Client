@@ -3,10 +3,21 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo2.jpg'
 import logo2 from '../../../assets/logo1.jpg'
 import { AuthContext } from '../../../Providers/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
 
-    const {user} = useContext(AuthContext)
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                toast.success('Logged Out successfully');
+            })
+            .catch(err => toast.error(err.message))
+
+    }
 
 
     return (
@@ -76,7 +87,7 @@ const Navbar = () => {
                                     <img src={logo2} />
                                 </div>
                             </div>
-                            <button className='btn btn-outline btn-error btn-xs rounded-none md:btn-sm '>Log Out</button>
+                            <button className='btn btn-outline btn-error btn-xs rounded-none md:btn-sm ' onClick={handleSignOut}>Log Out</button>
                         </div>
                         :
                         <Link to='/login' className='btn btn-outline btn-primary btn-xs rounded-none md:btn-sm '>Log In</Link>
