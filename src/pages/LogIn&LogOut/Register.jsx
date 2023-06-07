@@ -31,6 +31,7 @@ const Register = () => {
     return (
         <div className="hero  bg-base-200  md:h-[850px] ">
             <div className="">
+            <h1 className='text-center text-3xl pb-7'>Sign Up</h1>
                 <div className="card  md:w-[450px] shadow-lg bg-white backdrop-blur-md bg-opacity-10  border border-slate-500 rounded-md">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
@@ -84,14 +85,14 @@ const Register = () => {
                             {errors.password?.type === 'maxLength' && <p className="text-error mt-2">Password must be less than 20 characters</p>}
                             {errors.password?.type === 'pattern' && <p className="text-error mt-2">Password must have one Uppercase one lower case and one number </p>}
 
-                            <div className='absolute right-2 top-[50px] cursor-pointer' onClick={() => setShowPass(!showPass)}>
+                            <div className='absolute right-3 top-[50px] cursor-pointer' onClick={() => setShowPass(!showPass)}>
                                 {
                                     showPass ? <FaEyeSlash size={22} /> : <FaEye size={20} />
                                 }
                             </div>
 
                             <label className="label">
-                                <a href="#" className="label-text-alt hover:link my-3">Forgot password?</a>
+                                <a href="#" className="label-text-alt hover:link my-3">Forgot password ?</a>
                             </label>
 
                         </div>
@@ -99,12 +100,12 @@ const Register = () => {
 
 
                         <div className="form-control ">
-                            <input className="btn btn-primary" type="submit" value="Sign Up" />
+                            <input className="btn btn-primary text-white" type="submit" value="Sign Up" />
                         </div>
 
                     </form>
 
-                    <p className='text-center'><small>Already have an account <Link to="/login">Login</Link></small></p>
+                    <p className='text-center'><small>Already have an account ? <Link to="/login" className='font-semibold hover:link'>Login</Link></small></p>
                     <GoogleLogin />
 
                 </div>
