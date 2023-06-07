@@ -9,9 +9,9 @@
  };
 
  .nav-link-active{
-    @apply font-bold text-primary text-lg hover:text-white  hover:bg-primary rounded-none
+    @apply font-bold text-primary  hover:text-white  hover:bg-primary rounded-none
  };
 
 .nav-link-passive{
-    @apply text-primary text-lg hover:text-white  hover:bg-primary rounded-none
+    @apply text-primary  hover:text-white  hover:bg-primary rounded-none
 }

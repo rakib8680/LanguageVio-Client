@@ -78,7 +78,7 @@ const Navbar = () => {
                             <button className='btn btn-outline btn-error btn-xs rounded-none md:btn-sm '>Log Out</button>
                         </div>
                         :
-                        <button className='btn btn-outline btn-primary btn-xs rounded-none md:btn-sm '>Log In</button>
+                        <Link to='/login' className='btn btn-outline btn-primary btn-xs rounded-none md:btn-sm '>Log In</Link>
                 }
             </div>
 
