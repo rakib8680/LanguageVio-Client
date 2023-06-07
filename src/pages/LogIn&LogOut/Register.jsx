@@ -1,5 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import GoogleLogin from './GoogleLogin';
@@ -7,15 +9,27 @@ import GoogleLogin from './GoogleLogin';
 const Register = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const [showPass, setShowPass] = useState(false)
+    const { updateUser, registerUser } = useContext(AuthContext);
     // const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data)
-    }
+
+        // register new user 
+        registerUser(data.email, data.password)
+            .then((result) => {
+                updateUser(data.name, data.photoURL)
+                toast.success('Successfully registered')
+                // navigate(location?.state?.from.pathname || '/')
+            })
+            .catch(error => toast.error(error.message));
+
+    };
+
 
     return (
-        <div className="hero  bg-base-200  md:h-[850px]">
+        <div className="hero  bg-base-200  md:h-[850px] ">
             <div className="">
                 <div className="card  md:w-[450px] shadow-lg bg-white backdrop-blur-md bg-opacity-10  border border-slate-500 rounded-md">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -55,11 +69,11 @@ const Register = () => {
 
 
 
-                        <div className="form-control ">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password"  {...register("password", {
+                            <input type={showPass ? 'text' : 'password'}  {...register("password", {
                                 required: true,
                                 minLength: 6,
                                 maxLength: 20,
@@ -69,6 +83,12 @@ const Register = () => {
                             {errors.password?.type === 'minLength' && <p className="text-error mt-2">Password must be 6 characters or Above</p>}
                             {errors.password?.type === 'maxLength' && <p className="text-error mt-2">Password must be less than 20 characters</p>}
                             {errors.password?.type === 'pattern' && <p className="text-error mt-2">Password must have one Uppercase one lower case and one number </p>}
+
+                            <div className='absolute right-2 top-[50px] cursor-pointer' onClick={() => setShowPass(!showPass)}>
+                                {
+                                    showPass ? <FaEyeSlash size={22} /> : <FaEye size={20} />
+                                }
+                            </div>
 
                             <label className="label">
                                 <a href="#" className="label-text-alt hover:link my-3">Forgot password?</a>
