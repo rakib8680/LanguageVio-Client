@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo2.jpg'
 import logo2 from '../../../assets/logo1.jpg'
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Navbar = () => {
 
-    const user = false
+    const {user} = useContext(AuthContext)
 
 
     return (
