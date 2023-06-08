@@ -1,13 +1,14 @@
 import React from 'react';
 
-const classesCard = ({ info }) => {
+const InstructorCard = ({ info }) => {
 
+    console.log(info);
     const {
-        class_name,
-        price,
+        teacher_name,
+        experience,
         students,
-
-        teacher,
+        language,
+       schedule,
         image,
     } = info || {};
 
@@ -15,10 +16,10 @@ const classesCard = ({ info }) => {
         <div className="w-96 bg-white shadow-lg rounded-lg overflow-hidden">
             <img className="w-full object-cover" src={image} alt="Card Image" />
             <div className="p-6">
-                <h2 className="text-xl font-semibold text-gray-800">{class_name}</h2>
-                <p className="mt-2 text-gray-600">Price : ${price}</p>
-                <p className="mt-2 text-gray-600">Teacher : {teacher}</p>
-                <p className="mt-2 text-gray-600">Students : {students}</p>
+                <h2 className="text-xl font-semibold text-gray-800">{teacher_name}</h2>
+                <p className="mt-2 text-gray-600">Experience : {experience}</p>
+                <p className="mt-2 text-gray-600">Class : {language}</p>
+                <p className="mt-2 text-gray-600">Schedule : {schedule}</p>
                 <div className="mt-4">
                     <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Tag 1</span>
                     <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">Tag 2</span>
@@ -28,4 +29,4 @@ const classesCard = ({ info }) => {
     );
 };
 
-export default classesCard;
+export default InstructorCard;

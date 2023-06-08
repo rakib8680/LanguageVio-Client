@@ -1,0 +1,74 @@
+[
+    {
+        "teacher_name": "John Smith",
+        "specialty": "English",
+        "experience": "10 years",
+        "bio": "Highly experienced English teacher with a passion for helping students improve their language skills.",
+        "class_name": "English Class",
+        "language": "English",
+        "level": "Intermediate",
+        "schedule": "Monday, Wednesday, Friday",
+        "time": "10:00 AM - 12:00 PM",
+        "image": "/src/assets/instructor.jpg"
+    },
+    {
+        "teacher_name": "Maria Rodriguez",
+        "specialty": "Spanish",
+        "experience": "8 years",
+        "bio": "Experienced Spanish teacher dedicated to helping students achieve fluency in the language.",
+        "class_name": "Spanish Class",
+        "language": "Spanish",
+        "level": "Beginner",
+        "schedule": "Tuesday, Thursday",
+        "time": "2:00 PM - 4:00 PM",
+        "image": "/src/assets/instructor.jpg"
+    },
+    {
+        "teacher_name": "Isabelle Dupont",
+        "specialty": "French",
+        "experience": "12 years",
+        "bio": "Passionate French teacher with 12 years of experience in teaching French language and culture.",
+        "class_name": "French Class",
+        "language": "French",
+        "level": "Advanced",
+        "schedule": "Monday, Wednesday",
+        "time": "6:00 PM - 8:00 PM",
+        "image": "/src/assets/instructor.jpg"
+    },
+    {
+        "teacher_name": "Hans Müller",
+        "specialty": "German",
+        "experience": "9 years",
+        "bio": "Experienced German teacher dedicated to helping students develop their German language skills.",
+        "class_name": "German Class",
+        "language": "German",
+        "level": "Intermediate",
+        "schedule": "Tuesday, Thursday, Saturday",
+        "time": "9:00 AM - 11:00 AM",
+        "image": "/src/assets/instructor.jpg"
+    },
+    {
+        "teacher_name": "Li Wei",
+        "specialty": "Mandarin",
+        "experience": "7 years",
+        "bio": "Passionate Mandarin teacher with 7 years of experience in teaching Mandarin to non-native speakers.",
+        "class_name": "Mandarin Class",
+        "language": "Mandarin",
+        "level": "Advanced",
+        "schedule": "Monday, Wednesday, Friday",
+        "time": "4:00 PM - 6:00 PM",
+        "image": "/src/assets/instructor.jpg"
+    },
+    {
+        "teacher_name": "Giuseppe Rossi",
+        "specialty": "Italian",
+        "experience": "6 years",
+        "bio": "Enthusiastic Italian teacher with a strong background in Italian language instruction.",
+        "class_name": "Italian Class",
+        "language": "Italian",
+        "level": "Beginner",
+        "schedule": "Tuesday, Thursday",
+        "time": "6:00 PM - 8:00 PM",
+        "image": "/src/assets/instructor.jpg"
+    }
+]
