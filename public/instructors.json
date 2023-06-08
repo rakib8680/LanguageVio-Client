@@ -9,7 +9,8 @@
         "level": "Intermediate",
         "schedule": "Monday, Wednesday, Friday",
         "time": "10:00 AM - 12:00 PM",
-        "image": "/src/assets/instructor.jpg"
+        "image": "/src/assets/instructor.jpg",
+        "email": "abdullah.rakib.00@gmail.com"
     },
     {
         "teacher_name": "Maria Rodriguez",
@@ -21,7 +22,8 @@
         "level": "Beginner",
         "schedule": "Tuesday, Thursday",
         "time": "2:00 PM - 4:00 PM",
-        "image": "/src/assets/instructor.jpg"
+        "image": "/src/assets/instructor.jpg",
+        "email": "abdullah.rakib.00@gmail.com"
     },
     {
         "teacher_name": "Isabelle Dupont",
@@ -33,7 +35,8 @@
         "level": "Advanced",
         "schedule": "Monday, Wednesday",
         "time": "6:00 PM - 8:00 PM",
-        "image": "/src/assets/instructor.jpg"
+        "image": "/src/assets/instructor.jpg",
+        "email": "abdullah.rakib.00@gmail.com"
     },
     {
         "teacher_name": "Hans Müller",
@@ -45,7 +48,8 @@
         "level": "Intermediate",
         "schedule": "Tuesday, Thursday, Saturday",
         "time": "9:00 AM - 11:00 AM",
-        "image": "/src/assets/instructor.jpg"
+        "image": "/src/assets/instructor.jpg",
+        "email": "abdullah.rakib.00@gmail.com"
     },
     {
         "teacher_name": "Li Wei",
@@ -57,7 +61,8 @@
         "level": "Advanced",
         "schedule": "Monday, Wednesday, Friday",
         "time": "4:00 PM - 6:00 PM",
-        "image": "/src/assets/instructor.jpg"
+        "image": "/src/assets/instructor.jpg",
+        "email": "abdullah.rakib.00@gmail.com"
     },
     {
         "teacher_name": "Giuseppe Rossi",
@@ -69,6 +74,7 @@
         "level": "Beginner",
         "schedule": "Tuesday, Thursday",
         "time": "6:00 PM - 8:00 PM",
-        "image": "/src/assets/instructor.jpg"
+        "image": "/src/assets/instructor.jpg",
+        "email": "abdullah.rakib.00@gmail.com"
     }
 ]
