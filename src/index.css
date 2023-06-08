@@ -9,9 +9,13 @@
  };
 
  .nav-link-active{
-    @apply font-bold text-primary  hover:text-white  hover:bg-primary rounded-none
+    @apply font-bold text-primary bg-gray-100  hover:text-white  hover:bg-primary rounded-none
  };
 
 .nav-link-passive{
     @apply text-primary  hover:text-white  hover:bg-primary rounded-none
+};
+
+.login-page-design{
+    @apply flex flex-col md:flex-row bg-base-200 justify-center items-center gap-40 bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 
 }

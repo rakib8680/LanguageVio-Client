@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Classes from "../pages/Classes/Classes";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import Instructors from "../pages/Instructors/Instructors";
 import LoginLayout from "../pages/LogIn&LogOut/LoginLayout";
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
@@ -33,7 +35,7 @@ export const router = createBrowserRouter([
                 element: <LoginLayout />
             },
             {
-                path:'register',
+                path: 'register',
                 element: <Register></Register>
             }
         ]

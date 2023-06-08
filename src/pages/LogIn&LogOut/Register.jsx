@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import GoogleLogin from './GoogleLogin';
+import './register.css'
 
 const Register = () => {
 
@@ -30,9 +31,9 @@ const Register = () => {
 
 
     return (
-        <div className="hero  bg-base-200  md:h-[850px] ">
+        <div className="hero  bg-base-200  md:h-[850px] background ">
             <div className="">
-            <h1 className='text-center text-3xl pb-7'>Sign Up</h1>
+            <h1 className='text-center text-3xl pb-7 text-white'>Sign Up</h1>
                 <div className="card  md:w-[450px] shadow-lg bg-white backdrop-blur-md bg-opacity-10  border border-slate-500 rounded-md">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
@@ -85,7 +86,7 @@ const Register = () => {
                             {errors.password?.type === 'minLength' && <p className="text-error mt-2">Password must be 6 characters or Above</p>}
                             {errors.password?.type === 'maxLength' && <p className="text-error mt-2">Password must be less than 20 characters</p>}
                             {errors.password?.type === 'pattern' && <p className="text-error mt-2">Password must have one Uppercase one lower case and one number </p>}
-
+                            {/* TODO : use special character validation */}
                             <div className='absolute right-3 top-[50px] cursor-pointer' onClick={() => setShowPass(!showPass)}>
                                 {
                                     showPass ? <FaEyeSlash size={22} /> : <FaEye size={20} />

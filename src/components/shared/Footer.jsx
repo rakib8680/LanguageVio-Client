@@ -35,8 +35,8 @@ const Footer = () => {
                         <p className="text-slate-300 mb-2">Email: abdullah.rakib.00@gmail.com</p>
                     </div>
                 </div>
-                <div className="mt-8 text-slate-300 text-center text-sm">
-                    &copy; {new Date().getFullYear()} LANGUAGEVIO. All rights reserved.
+                <div className="mt-8 text-slate-300 text-center text-sm tracking-widest ">
+                    &copy; {new Date().getFullYear()} LANGUAGEVIO.inc All rights reserved.
                 </div>
             </div>
         </footer>
