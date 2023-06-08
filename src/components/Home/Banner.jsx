@@ -7,7 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Banner = () => {
     return (
-        <Carousel autoPlay={true}  className='text-center'>
+        <Carousel autoPlay={true} showThumbs={false}  className='text-center'>
             <div className='banner-bg py-20'>
                 <div className='flex justify-around items-center container mx-auto '>
                     <div className='text-slate-800 space-y-7 md:w-[570px]'>
