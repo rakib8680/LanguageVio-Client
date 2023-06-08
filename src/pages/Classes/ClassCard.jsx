@@ -10,7 +10,7 @@ const ClassCard = ({ clash }) => {
 
     return (
         <div className='mb-10 mx-auto'>
-            <div className={`card  backdrop-blur-md ${available_seats ? 'bg-white bg-opacity-20' : 'bg-red-200 cursor-not-allowed shadow-xl shadow-red-200'} shadow-md border-slate-400 border w-96 p-5 md:p-0 rounded-none`}>
+            <div className={`card  backdrop-blur-md ${available_seats ? 'bg-white bg-opacity-20' : 'bg-red-200 cursor-not-allowed border-red-600'} shadow-md border-slate-400 border w-96 p-5 md:p-0 rounded-none`}>
                 <figure>
                     <img src={image} className="w-full  rounded-lg md:rounded-none mask mask-hexagon mt-3" />
                 </figure>
@@ -24,7 +24,7 @@ const ClassCard = ({ clash }) => {
                     <p><span className='font-semibold'>Available Seats :</span> {available_seats}</p>
 
                     <div className="card-actions justify-end">
-                        <Link to='/' disabled={!available_seats && true} className=" btn btn-outline rounded-none hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 hover:text-black">Enroll Now</Link>
+                        <Link to='/' disabled={!available_seats && true}  className=" btn btn-outline rounded-none hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 hover:text-black">Enroll Now</Link>
                     </div>
                 </div>
             </div>
