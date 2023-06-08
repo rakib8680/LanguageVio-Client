@@ -3,3 +3,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.banner-bg2{
+    background: url('../../assets/background1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner-bg3{
+    background: url('../../assets/background2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
