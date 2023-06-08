@@ -1,6 +1,7 @@
 import React from 'react';
 import './home.css'
 import communication from '../../assets/communication.png'
+import communication2 from '../../assets/communication2.webp'
 import { FaBookReader } from 'react-icons/fa';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -36,7 +37,7 @@ const Banner = () => {
                         <button className='btn btn-primary bg-slate-800 text-white px-10 rounded-none'>Get Started</button>
                     </div>
                     <div className='md:w-[750px]'>
-                        <img src={communication} />
+                        <img src={communication2} />
                     </div>
                 </div>
             </div>

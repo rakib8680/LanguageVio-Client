@@ -31,7 +31,7 @@ const PopularInstructors = () => {
 
 
     return (
-        <div className="bg-gradient-to-b from-white via-indigo-100 to-red-100 py-16 ">
+        <div className="bg-gradient-to-b from-white via-red-100 to-purple-100  py-16 ">
             <div className="pt-10 ">
                 <h1 className='text-center text-3xl text-slate-800'>Popular Instructors</h1>
                 <h1 className='text-center text-sm text-slate-200 border w-fit mx-auto px-3 mt-5 bg-primary'>Enroll Now!!</h1>
