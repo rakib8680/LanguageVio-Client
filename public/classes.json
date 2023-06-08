@@ -8,7 +8,8 @@
         "teacher": "John Smith",
         "students": 3,
         "image": "/src/assets/english.jpg",
-        "price": 199
+        "price": 199,
+        "available_seats": 19
     },
     {
         "class_name": "Spanish Class",
@@ -17,9 +18,10 @@
         "schedule": "Tuesday, Thursday",
         "time": "2:00 PM - 4:00 PM",
         "teacher": "Maria Rodriguez",
-        "students": 3,
+        "students": 0,
         "image": "/src/assets/english.jpg",
-        "price": 149
+        "price": 149,
+        "available_seats": 0
     },
     {
         "class_name": "French Class",
@@ -30,7 +32,8 @@
         "teacher": "Isabelle Dupont",
         "students": 3,
         "image": "/src/assets/english.jpg",
-        "price": 149
+        "price": 149,
+        "available_seats": 7
     },
     {
         "class_name": "German Class",
@@ -41,8 +44,8 @@
         "teacher": "Hans Müller",
         "students": 3,
         "image": "/src/assets/english.jpg",
-        "price": 99
-
+        "price": 99,
+        "available_seats": 0
     },
     {
         "class_name": "Mandarin Class",
@@ -53,7 +56,8 @@
         "teacher": "Li Wei",
         "students": 3,
         "image": "/src/assets/english.jpg",
-        "price": 175
+        "price": 175,
+        "available_seats": 11
     },
     {
         "class_name": "Italian Class",
@@ -64,7 +68,9 @@
         "teacher": "Giuseppe Rossi",
         "students": 3,
         "image": "/src/assets/english.jpg",
-        "price": 199
+        "price": 199,
+        "available_seats": 4
+
 
     }
 ]

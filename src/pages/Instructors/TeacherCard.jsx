@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 
 const TeacherCard = ({ instructor }) => {
 
-    console.log(instructor);
     const { teacher_name, image, language, bio, schedule, experience, email } = instructor || {};
 
     return (
         <div className='mb-10'>
-            <div className="card lg:card-side backdrop-blur-md bg-white bg-opacity-10 shadow-md border-slate-400 border md:w-4/6  mx-auto md:h-[600px] p-5 md:p-0 rounded-none md:rounded-xl ">
+            <div className="card lg:card-side backdrop-blur-md bg-white bg-opacity-20 shadow-md border-slate-400 border md:w-4/6  mx-auto md:h-[600px] p-5 md:p-0 rounded-none md:rounded-xl ">
                 <figure>
                     <img src={image} className="w-full md:w-[600px] rounded-lg md:rounded-none mask mask-squircle" />
                 </figure>

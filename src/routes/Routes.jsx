@@ -29,7 +29,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'classes',
-                element: <Classes />
+                element: <Classes />,
+                loader : ()=>fetch('/classes.json')
             },
             {
                 path: 'login',
