@@ -13,9 +13,7 @@ const Sidebar = () => {
     const { user, logOut } = useContext(AuthContext)
 
     const [isActive, setActive] = useState('false')
-    const toggleHandler = event => {
-        setToggle(event.target.checked)
-    }
+
     // Sidebar Responsive Handler
     const handleToggle = () => {
         setActive(!isActive)

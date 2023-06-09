@@ -48,7 +48,7 @@ const SelectedClassRow = ({ singleClass, index, classes, setClasses }) => {
 
 
     return (
-        <tr className=' text-center mx-auto border-indigo-200  border-y-2  text-base font-medium'>
+        <tr className=' text-center mx-auto border-indigo-200  border-y  text-base font-medium'>
             <td>
                 {index + 1}
             </td>
