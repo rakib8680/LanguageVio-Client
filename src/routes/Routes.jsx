@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashBoard from "../layouts/DashBoard";
 import Main from "../layouts/Main";
 import Classes from "../pages/Classes/Classes";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
@@ -25,12 +26,12 @@ export const router = createBrowserRouter([
             {
                 path: 'instructors',
                 element: <Instructors />,
-                loader : ()=>fetch('/instructors.json')
+                loader: () => fetch('/instructors.json')
             },
             {
                 path: 'classes',
                 element: <Classes />,
-                loader : ()=>fetch('/classes.json')
+                loader: () => fetch('/classes.json')
             },
             {
                 path: 'login',
@@ -39,6 +40,15 @@ export const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <DashBoard />,
+        children:[
+            {
+                
             }
         ]
     }

@@ -84,7 +84,7 @@ const Navbar = () => {
                         <div className='flex items-center md:flex-row flex-col gap-2'>
                             <div className="avatar md:mr-5  mr-3 tooltip tooltip-left tooltip-neutral" data-tip={user?.displayName}>
                                 <div className="md:w-11 w-8 rounded-full ring ms-2 md:ms-0">
-                                    <img src={logo2} />
+                                    <img src={user?.photoURL} />
                                 </div>
                             </div>
                             <button className='btn btn-outline btn-error btn-xs rounded-none md:btn-sm ' onClick={handleSignOut}>Log Out</button>
