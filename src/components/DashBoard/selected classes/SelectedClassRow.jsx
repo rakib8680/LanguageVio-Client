@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEye, FaTrash } from 'react-icons/fa';
+import { FaEye, FaTrash, FaWallet } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const SelectedClassRow = ({ singleClass, index }) => {
@@ -8,16 +8,15 @@ const SelectedClassRow = ({ singleClass, index }) => {
 
 
     return (
-        <tr>
+        <tr className=' text-center mx-auto border-indigo-200  border-y-2  text-base font-medium'>
             <td>
                 {index + 1}
             </td>
-            <td>
-                <div className="avatar">
-                    <div className="mask mask-squircle w-20 h-20">
+            <td className='md:flex flex-col items-center'>
+                    <div className=" w-52">
                         <img src={image} />
                     </div>
-                </div>
+                    <h1 className='bg-slate-400 text-white w-fit px-14 text-base font-bold '>{class_name}</h1>
             </td>
             <td>
                 {teacher}
@@ -28,9 +27,9 @@ const SelectedClassRow = ({ singleClass, index }) => {
             <td>
                 ${price}
             </td>
-            <td>
-                <Link className='btn btn-square btn-success btn-sm tooltip-left tooltip flex tooltip-success' data-tip="View Details"><FaEye /></Link>
-                <button className='btn btn-square btn-error btn-sm tooltip-left tooltip flex tooltip-error' data-tip="Delete Toy" ><FaTrash /></button>
+            <td className='space-y-5'>
+                <Link className='btn btn-square btn-info bg-sky-400 border-none btn-md tooltip-left tooltip flex tooltip-info' data-tip="Pay Now"><FaWallet size={20} /></Link>
+                <button className='btn btn-square btn-warning btn-md tooltip-left tooltip flex tooltip-warning ' data-tip="Delete Class" ><FaTrash   size={20}/></button>
             </td>
         </tr>
     );

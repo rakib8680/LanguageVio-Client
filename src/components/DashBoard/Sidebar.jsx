@@ -5,7 +5,7 @@ import Logo from '../../assets/logo2.jpg'
 import { GrLogout } from 'react-icons/gr'
 import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
-import { FaBookmark } from 'react-icons/fa'
+import { FaBookmark, FaHome } from 'react-icons/fa'
 
 const Sidebar = () => {
     const navigate = useNavigate()
@@ -79,6 +79,17 @@ const Sidebar = () => {
                         <FaBookmark className='w-5 h-5' />
 
                         <span className='mx-4 font-medium'>Selected Classes</span>
+                    </NavLink>
+                    <NavLink
+                        to='/'
+                        className={({ isActive }) =>
+                            `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-100   hover:text-gray-700 ${isActive ? 'bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 border-slate-600 border' : 'text-gray-600'
+                            }`
+                        }
+                    >
+                        <FaHome className='w-5 h-5' />
+
+                        <span className='mx-4 font-medium'>Home</span>
                     </NavLink>
                 </div>
 
