@@ -7,7 +7,6 @@ import './classes.css'
 const Classes = () => {
 
     const classes = useLoaderData()
-    console.log(classes);
 
     return (
         <div className='class-bg mb-20'>

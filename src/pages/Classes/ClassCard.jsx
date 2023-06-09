@@ -1,12 +1,48 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
-// import { } from 'react-icons/fa';
 
 const ClassCard = ({ clash }) => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const { user } = useContext(AuthContext)
 
     const { class_name, image, language, price, schedule, students, teacher, available_seats } = clash || {};
+
+
+    const handleAddToCart = item => {
+        if (user && user.email) {
+            fetch('http://localhost:5000/cart', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(item)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                       toast.success('Class added successfully')
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'Please login to add to your cart',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', { state: { from: location } })
+                }
+            })
+        }
+    }
 
     return (
         <div className='mb-10 mx-auto'>
@@ -24,7 +60,7 @@ const ClassCard = ({ clash }) => {
                     <p><span className='font-semibold'>Available Seats :</span> {available_seats}</p>
 
                     <div className="card-actions justify-end">
-                        <Link to='/' disabled={!available_seats && true}  className=" btn btn-outline rounded-none hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 hover:text-black px-9">Select</Link>
+                        <button disabled={!available_seats && true} onClick={() => handleAddToCart(clash)} className=" btn btn-outline rounded-none hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 hover:text-black px-9">Select</button>
                     </div>
                 </div>
             </div>
