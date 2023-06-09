@@ -14,12 +14,13 @@ const ClassCard = ({ clash }) => {
 
     const handleAddToCart = item => {
         if (user && user.email) {
+            const cartItem = {  class_name, image, price, email: user.email, available_seats,language,schedule,teacher }
             fetch('http://localhost:5000/cart', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(item)
+                body: JSON.stringify(cartItem)
             })
                 .then(res => res.json())
                 .then(data => {

@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import SelectedClasses from "../components/DashBoard/selected classes/SelectedClasses";
 import DashBoard from "../layouts/DashBoard";
 import Main from "../layouts/Main";
 import Classes from "../pages/Classes/Classes";
@@ -52,7 +53,8 @@ export const router = createBrowserRouter([
             </PrivateRoute>,
         children: [
             {
-
+                path: 'selectedClasses',
+                element: <SelectedClasses />
             }
         ]
     }

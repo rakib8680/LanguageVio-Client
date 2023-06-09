@@ -29,8 +29,8 @@ const Sidebar = () => {
             {/* Small Screen Navbar */}
             <div className='bg-gray-100 text-gray-800 flex justify-between md:hidden'>
                 <div>
-                    <div className='block cursor-pointer p-4 font-bold '>
-                        <img src={Logo} />
+                    <div className='text-center font-black bg-primary text-white w-fit mx-auto mt-5 px-4 py-1'>
+                        LANGUAGEVIO.inc
                     </div>
                 </div>
 
@@ -43,14 +43,13 @@ const Sidebar = () => {
             </div>
             {/* Sidebar */}
             <div
-                className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${isActive && '-translate-x-full'
+                className={`sidebar-container ${isActive && '-translate-x-full'
                     }  md:translate-x-0  transition duration-200 ease-in-out`}
             >
                 <div>
-                    {/* Branding & Profile Info */}
                     <div>
-                        <div className='w-20 mask mask-parallelogram hidden md:flex  justify-center items-center  mx-auto'>
-                            <img src={Logo} />
+                        <div className='text-center font-black bg-primary text-white w-fit mx-auto mt-5 px-4 py-1'>
+                            LANGUAGEVIO.inc
                         </div>
                         <div className='flex flex-col items-center mt-6 -mx-2'>
                             <Link to='/dashboard'>
@@ -66,25 +65,21 @@ const Sidebar = () => {
                                     {user?.displayName}
                                 </h4>
                             </Link>
-                            <Link to='/dashboard'>
-                                <p className='mx-2 mt-1 text-sm font-medium text-gray-600  hover:underline'>
-                                    {user?.email}
-                                </p>
-                            </Link>
                         </div>
+                        <div className='divider w-2/3 mx-auto'></div>
                     </div>
-                            {/* Menu Links */}
-                            <NavLink
-                                to='/dashboard/selectedClasses'
-                                className={({ isActive }) =>
-                                    `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
-                                    }`
-                                }
-                            >
-                                <FaBookmark className='w-5 h-5' />
+                    {/* Menu Links */}
+                    <NavLink
+                        to='/dashboard/selectedClasses'
+                        className={({ isActive }) =>
+                            `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-100   hover:text-gray-700 ${isActive ? 'bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 border-slate-600 border' : 'text-gray-600'
+                            }`
+                        }
+                    >
+                        <FaBookmark className='w-5 h-5' />
 
-                                <span className='mx-4 font-medium'>Selected Classes</span>
-                            </NavLink>
+                        <span className='mx-4 font-medium'>Selected Classes</span>
+                    </NavLink>
                 </div>
 
                 <div>
