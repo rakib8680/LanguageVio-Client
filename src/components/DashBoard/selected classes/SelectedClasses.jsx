@@ -37,7 +37,14 @@ const SelectedClasses = () => {
                     </thead>
                     <tbody className='bg-gradient-to-br from-indigo-100 via-red-100 '>
                         {
-                            classes.map((singleClass, index) =><SelectedClassRow singleClass={singleClass} index={index}  key={index} />)
+                            classes.map((singleClass, index) =>
+                                <SelectedClassRow
+                                    singleClass={singleClass}
+                                    index={index}
+                                    classes={classes}
+                                    setClasses={setClasses}
+                                    key={index}
+                                />)
                         }
                     </tbody>
                 </table>

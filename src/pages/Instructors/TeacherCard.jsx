@@ -21,7 +21,7 @@ const TeacherCard = ({ instructor }) => {
                     <p><span className='font-semibold'>Schedule :</span> {schedule}</p>
                     <p className='md:w-[650px]'>{bio}</p>
                     <div className="card-actions justify-end">
-                        <Link to='/' className="btn btn-neutral">Go Back</Link>
+                        <Link to='/' className="btn btn-neutral bg-slate-300 border-none text-slate-700 rounded-md">Go Back</Link>
                     </div>
                 </div>
             </div>

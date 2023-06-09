@@ -64,11 +64,11 @@ const Navbar = () => {
 
                     </li>
                     <li>
-                        <NavLink to='/instructors' className={({ isActive }) => (isActive ? 'nav-link-active' : 'nav-link-passive')}>Instructors</NavLink>
-                    </li>
-                    <li>
                         <NavLink to='/classes' className={({ isActive }) => (isActive ? 'nav-link-active' : 'nav-link-passive')}>Classes</NavLink>
 
+                    </li>
+                    <li>
+                        <NavLink to='/instructors' className={({ isActive }) => (isActive ? 'nav-link-active' : 'nav-link-passive')}>Instructors</NavLink>
                     </li>
                     {user &&
                         <li>
