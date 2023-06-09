@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
+import { saveUser } from '../../api/auth';
 import { AuthContext } from '../../Providers/AuthProvider';
 import GoogleLogin from './GoogleLogin';
 import './register.css'
@@ -23,6 +24,8 @@ const Register = () => {
             .then((result) => {
                 updateUser(data.name, data.photoURL)
                 toast.success('Successfully registered')
+                saveUser(result.user)
+
                 navigate('/')
             })
             .catch(error => toast.error(error.message));

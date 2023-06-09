@@ -6,7 +6,6 @@ import TeacherCard from './teacherCard';
 const Instructors = () => {
 
     const instructorsData = useLoaderData();
-    console.log(instructorsData);
 
     return (
         <div className='bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 pb-20'>

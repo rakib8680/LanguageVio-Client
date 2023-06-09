@@ -24,7 +24,7 @@ const ClassCard = ({ clash }) => {
                     <p><span className='font-semibold'>Available Seats :</span> {available_seats}</p>
 
                     <div className="card-actions justify-end">
-                        <Link to='/' disabled={!available_seats && true}  className=" btn btn-outline rounded-none hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 hover:text-black">Enroll Now</Link>
+                        <Link to='/' disabled={!available_seats && true}  className=" btn btn-outline rounded-none hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 hover:text-black px-9">Select</Link>
                     </div>
                 </div>
             </div>
