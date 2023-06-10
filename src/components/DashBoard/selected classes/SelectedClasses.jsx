@@ -8,7 +8,7 @@ const SelectedClasses = () => {
     const [classes, setClasses] = useState([])
 
 
-    const url = `http://localhost:5000/cart?email=${user?.email}`
+    const url = `${import.meta.env.VITE_API_BASE_URL}/cart?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

@@ -15,7 +15,7 @@ const ClassCard = ({ clash }) => {
     const handleAddToCart = item => {
         if (user && user.email) {
             const cartItem = {  class_name, image, price, email: user.email, available_seats,language,schedule,teacher }
-            fetch('http://localhost:5000/cart', {
+            fetch(`${import.meta.env.VITE_API_BASE_URL}/cart`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

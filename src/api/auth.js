@@ -6,7 +6,7 @@ export const saveUser = user => {
     email: user.email,
   }
 
-  fetch(`http://localhost:5000/users/${user?.email}`, {
+  fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${user?.email}`, {
     method: 'PUT',
     headers: {
       'content-type': 'application/json',
@@ -21,7 +21,7 @@ export const saveUser = user => {
 
 // Get role
 export const getRole = async email => {
-  const response = await fetch(`http://localhost:5000/users/${email}`)
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${email}`)
   const user = await response.json()
   return user?.role
 }

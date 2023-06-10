@@ -6,11 +6,14 @@ import { GrLogout } from 'react-icons/gr'
 import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
 import { FaBookmark, FaHome } from 'react-icons/fa'
+import {SiGoogleclassroom } from 'react-icons/si'
+import {BsWindowStack} from 'react-icons/bs'
 
 const Sidebar = () => {
     const navigate = useNavigate()
-    const [toggle, setToggle] = useState(false)
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut, role } = useContext(AuthContext)
+
+    console.log(role);
 
     const [isActive, setActive] = useState('false')
 
@@ -42,8 +45,9 @@ const Sidebar = () => {
             {/* Sidebar */}
             <div
                 className={`sidebar-container ${isActive && '-translate-x-full'
-                    }  md:translate-x-0  transition duration-200 ease-in-out`}
-            >
+                    }  md:translate-x-0  transition duration-200 ease-in-out`}>
+
+
                 <div>
                     <div>
                         <div className='text-center font-black bg-primary text-white w-fit mx-auto mt-5 px-4 py-1'>
@@ -66,22 +70,56 @@ const Sidebar = () => {
                         </div>
                         <div className='divider w-2/3 mx-auto'></div>
                     </div>
-                    {/* Menu Links */}
-                    <NavLink
-                        to='/dashboard/selectedClasses'
-                        className={({ isActive }) =>
-                            `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-100   hover:text-gray-700 ${isActive ? 'bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 border-slate-600 border' : 'text-gray-600'
-                            }`
-                        }
-                    >
-                        <FaBookmark className='w-5 h-5' />
+                    {/* Menu Links for instructors */}
+                    {
+                        role === 'instructor' &&
+                        <>
+                            <NavLink
+                                to='/dashboard/addClass'
+                                className={({ isActive }) =>
+                                    `  menu ${isActive ? 'menu-active' : 'text-gray-600'
+                                    }`
+                                }
+                            >
+                                <SiGoogleclassroom className='w-5 h-5' />
 
-                        <span className='mx-4 font-medium'>Selected Classes</span>
-                    </NavLink>
+                                <span className='mx-4 font-medium'>Add a Class</span>
+                            </NavLink>
+                            <NavLink
+                                to='/dashboard/myClasses'
+                                className={({ isActive }) =>
+                                    `  menu ${isActive ? 'menu-active' : 'text-gray-600'
+                                    }`
+                                }
+                            >
+                                <BsWindowStack className='w-5 h-5' />
+
+                                <span className='mx-4 font-medium'>My Classes</span>
+                            </NavLink>
+                        </>
+                    }
+
+
+                    {/* Menu Links for students */}
+                    {
+                        !role &&
+                        <NavLink
+                            to='/dashboard/selectedClasses'
+                            className={({ isActive }) =>
+                                `  menu ${isActive ? 'menu-active' : 'text-gray-600'
+                                }`
+                            }
+                        >
+                            <FaBookmark className='w-5 h-5' />
+
+                            <span className='mx-4 font-medium'>Selected Classes</span>
+                        </NavLink>
+                    }
+
                     <NavLink
                         to='/'
                         className={({ isActive }) =>
-                            `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-100   hover:text-gray-700 ${isActive ? 'bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 border-slate-600 border' : 'text-gray-600'
+                            ` menu ${isActive ? 'menu-active' : 'text-gray-600'
                             }`
                         }
                     >
@@ -92,7 +130,9 @@ const Sidebar = () => {
                 </div>
 
                 <div>
+
                     <hr />
+
                     <NavLink
                         to='/dashboard/profile'
                         className={({ isActive }) =>

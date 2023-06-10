@@ -1,6 +1,6 @@
 import React from 'react';
 import toast from 'react-hot-toast';
-import {FaTrash, FaWallet } from 'react-icons/fa';
+import { FaTrash, FaWallet } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -21,15 +21,13 @@ const SelectedClassRow = ({ singleClass, index, classes, setClasses }) => {
             confirmButtonText: 'Delete it!'
         })
             .then(result => {
-                console.log(result);
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/cart/${_id}`, {
+                    fetch(`${import.meta.env.VITE_API_BASE_URL}/cart/${_id}`, {
                         method: 'DELETE',
                         headers: { 'Content-Type': 'application/json' },
                     })
                         .then(res => res.json())
                         .then(data => {
-                            console.log(data);
                             if (data.deletedCount > 0) {
                                 toast.success('Class deleted successfully')
                                 const remaining = classes.filter(cls => cls._id !== _id)

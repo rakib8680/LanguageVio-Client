@@ -55,6 +55,9 @@ export const router = createBrowserRouter([
             {
                 path: 'selectedClasses',
                 element: <SelectedClasses />
+            },
+            {
+                
             }
         ]
     }
