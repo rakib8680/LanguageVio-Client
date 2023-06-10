@@ -20,7 +20,6 @@ const AddClass = () => {
 
 
     const onSubmit = ({ name, image, className, seats, price, email }) => {
-        // console.log(name, image, className, seats, price, email); 
         setLoading(true);
         const imageData = image[0];
         imageUpload(imageData)

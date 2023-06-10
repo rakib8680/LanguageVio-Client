@@ -13,7 +13,6 @@ const SelectedClasses = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setClasses(data)
             })
     }, [url])

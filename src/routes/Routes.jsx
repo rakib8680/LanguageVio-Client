@@ -53,6 +53,7 @@ export const router = createBrowserRouter([
             <PrivateRoute>
                 <DashBoard />
             </PrivateRoute>,
+
         children: [
             {
                 path: 'selectedClasses',
@@ -60,11 +61,14 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'addClass',
-                element : <AddClass/>
+                element: <AddClass />
             },
             {
                 path: 'myClasses',
-                element : <MyClasses/>
+                element:
+                    <PrivateRoute>
+                        <MyClasses />
+                    </PrivateRoute>
             }
         ]
     }
