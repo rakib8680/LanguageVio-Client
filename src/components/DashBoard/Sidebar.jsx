@@ -1,14 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../providers/AuthProvider'
-import Logo from '../../assets/logo2.jpg'
 import { GrLogout } from 'react-icons/gr'
-import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
-import { FaBookmark, FaHome } from 'react-icons/fa'
+import { FaBookmark, FaHome, FaUserEdit } from 'react-icons/fa'
 import { SiGoogleclassroom } from 'react-icons/si'
 import { BsWindowStack } from 'react-icons/bs'
 import { CgProfile } from 'react-icons/cg'
+import { MdEditCalendar } from 'react-icons/md'
 
 const Sidebar = () => {
     const navigate = useNavigate()
@@ -110,7 +109,7 @@ const Sidebar = () => {
                                     }`
                                 }
                             >
-                                <SiGoogleclassroom className='w-5 h-5' />
+                                <MdEditCalendar className='w-5 h-5' />
 
                                 <span className='mx-4 font-medium'>Manage Classes</span>
                             </NavLink>
@@ -121,7 +120,7 @@ const Sidebar = () => {
                                     }`
                                 }
                             >
-                                <BsWindowStack className='w-5 h-5' />
+                                <FaUserEdit className='w-5 h-5' />
 
                                 <span className='mx-4 font-medium'>Manage Users</span>
                             </NavLink>
@@ -165,7 +164,7 @@ const Sidebar = () => {
                     <NavLink
                         to='/dashboard'
                         className={({ isActive }) =>
-                            `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
+                            `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? '' : 'text-gray-600'
                             }`
                         }
                     >

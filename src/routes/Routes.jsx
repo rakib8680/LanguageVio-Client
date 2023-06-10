@@ -74,7 +74,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'manageClasses',
-                element: <PrivateRoute> <ManageClasses /> </PrivateRoute>
+                element: <PrivateRoute> <ManageClasses /> </PrivateRoute>,
+                loader: ()=>fetch(`${import.meta.env.VITE_API_BASE_URL}/classes`)
             },
             {
                 path: 'manageUsers',

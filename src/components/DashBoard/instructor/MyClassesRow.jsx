@@ -1,48 +1,11 @@
 import React from 'react';
-import toast from 'react-hot-toast';
 import { FaPencilRuler,  } from 'react-icons/fa';
 import {MdFeedback} from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
 
 const MyClassesRow = ({ singleClass, index, classes, setClasses }) => {
 
     const { className, image, price, seats, _id, status, enrolled } = singleClass || {};
-
-
-
-    // delete class 
-    const handleDelete = (_id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Delete it!'
-        })
-            .then(result => {
-                if (result.isConfirmed) {
-                    fetch(`${import.meta.env.VITE_API_BASE_URL}/classes/${_id}`, {
-                        method: 'DELETE',
-                        headers: { 'Content-Type': 'application/json' },
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            if (data.deletedCount > 0) {
-                                toast.success('Class deleted successfully')
-                                const remaining = classes.filter(cls => cls._id !== _id)
-                                setClasses(remaining)
-                            }
-                        })
-
-                }
-            })
-    }
-
-
-
-
 
 
 
@@ -73,7 +36,7 @@ const MyClassesRow = ({ singleClass, index, classes, setClasses }) => {
             </td>
             <td className='space-y-5'>
                 <Link className='btn btn-square btn-info bg-blue-400 border-none btn-md text-white  tooltip-left tooltip flex tooltip-info' data-tip="FeedBack"><MdFeedback size={25} /></Link>
-                <button onClick={() => handleDelete(_id)} className='btn btn-square btn-success bg-green-600 text-white btn-md tooltip-left tooltip flex tooltip-success ' data-tip="Edit Class" ><FaPencilRuler size={20} /></button>
+                <button className='btn btn-square btn-success bg-green-600 text-white btn-md tooltip-left tooltip flex tooltip-success ' data-tip="Edit Class" ><FaPencilRuler size={20} /></button>
             </td>
         </tr>
     );
