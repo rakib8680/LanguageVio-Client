@@ -1,12 +1,12 @@
 import React from 'react';
 import toast from 'react-hot-toast';
-import { FaTrash, FaWallet } from 'react-icons/fa';
+import { FaPencilRuler,  } from 'react-icons/fa';
+import {MdFeedback} from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyClassesRow = ({ singleClass, index, classes, setClasses }) => {
 
-    console.log(singleClass);
     const { className, image, price, seats, _id, status, enrolled } = singleClass || {};
 
 
@@ -61,16 +61,19 @@ const MyClassesRow = ({ singleClass, index, classes, setClasses }) => {
                 {seats}
             </td>
             <td>
+                {
+                    enrolled ? enrolled : '0'
+                }
             </td>
             <td>
                 ${price}
             </td>
             <td>
-                <p className={`${status === 'pending' && 'bg-yellow-300 px-3 rounded-full mx-auto w-fit'} ${status === 'approved' && 'bg-green-300 px-3 rounded-full mx-auto w-fit'}`}>{status}</p>
+                <p className={`${status === 'pending' && 'bg-yellow-300 px-3 rounded-full mx-auto w-fit'} ${status === 'approved' && 'bg-green-300 px-3 rounded-full mx-auto w-fit' } ${status === 'denied' && 'bg-red-300 px-3 rounded-full mx-auto w-fit' }`}>{status}</p>
             </td>
             <td className='space-y-5'>
-                <Link className='btn btn-square btn-info bg-sky-400 border-none btn-md tooltip-left tooltip flex tooltip-info' data-tip="Pay Now"><FaWallet size={20} /></Link>
-                <button onClick={() => handleDelete(_id)} className='btn btn-square btn-warning btn-md tooltip-left tooltip flex tooltip-warning ' data-tip="Delete Class" ><FaTrash size={20} /></button>
+                <Link className='btn btn-square btn-info bg-blue-400 border-none btn-md text-white  tooltip-left tooltip flex tooltip-info' data-tip="FeedBack"><MdFeedback size={25} /></Link>
+                <button onClick={() => handleDelete(_id)} className='btn btn-square btn-success bg-green-600 text-white btn-md tooltip-left tooltip flex tooltip-success ' data-tip="Edit Class" ><FaPencilRuler size={20} /></button>
             </td>
         </tr>
     );

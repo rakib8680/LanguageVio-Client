@@ -6,8 +6,9 @@ import { GrLogout } from 'react-icons/gr'
 import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
 import { FaBookmark, FaHome } from 'react-icons/fa'
-import {SiGoogleclassroom } from 'react-icons/si'
-import {BsWindowStack} from 'react-icons/bs'
+import { SiGoogleclassroom } from 'react-icons/si'
+import { BsWindowStack } from 'react-icons/bs'
+import { CgProfile } from 'react-icons/cg'
 
 const Sidebar = () => {
     const navigate = useNavigate()
@@ -98,6 +99,34 @@ const Sidebar = () => {
                             </NavLink>
                         </>
                     }
+                    {/* Menu Links for admin */}
+                    {
+                        role === 'admin' &&
+                        <>
+                            <NavLink
+                                to='/dashboard/manageClasses'
+                                className={({ isActive }) =>
+                                    `  menu ${isActive ? 'menu-active' : 'text-gray-600'
+                                    }`
+                                }
+                            >
+                                <SiGoogleclassroom className='w-5 h-5' />
+
+                                <span className='mx-4 font-medium'>Manage Classes</span>
+                            </NavLink>
+                            <NavLink
+                                to='/dashboard/manageUsers'
+                                className={({ isActive }) =>
+                                    `  menu ${isActive ? 'menu-active' : 'text-gray-600'
+                                    }`
+                                }
+                            >
+                                <BsWindowStack className='w-5 h-5' />
+
+                                <span className='mx-4 font-medium'>Manage Users</span>
+                            </NavLink>
+                        </>
+                    }
 
 
                     {/* Menu Links for students */}
@@ -134,13 +163,13 @@ const Sidebar = () => {
                     <hr />
 
                     <NavLink
-                        to='/dashboard/profile'
+                        to='/dashboard'
                         className={({ isActive }) =>
                             `flex items-center px-4 py-2 mt-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
                             }`
                         }
                     >
-                        <FcSettings className='w-5 h-5' />
+                        <CgProfile className='w-5 h-5' />
 
                         <span className='mx-4 font-medium'>Profile</span>
                     </NavLink>

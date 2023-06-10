@@ -18,7 +18,7 @@ const MyClasses = () => {
 
 
     return (
-        <div className='pb-24 pt-10'>
+        <div className='pb-24 pt-20'>
             <h1 className='text-center pb-16 pt-10 text-2xl font-semibold'>You have {classes.length} Classes</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-4/5 mx-auto">

@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import ManageClasses from "../components/admin/ManageClasses";
+import ManageUsers from "../components/admin/ManageUsers";
 import AddClass from "../components/DashBoard/instructor/AddClass";
 import MyClasses from "../components/DashBoard/instructor/MyClasses";
 import SelectedClasses from "../components/DashBoard/selected classes/SelectedClasses";
@@ -69,6 +71,14 @@ export const router = createBrowserRouter([
                     <PrivateRoute>
                         <MyClasses />
                     </PrivateRoute>
+            },
+            {
+                path: 'manageClasses',
+                element: <PrivateRoute> <ManageClasses /> </PrivateRoute>
+            },
+            {
+                path: 'manageUsers',
+                element: <PrivateRoute> <ManageUsers /> </PrivateRoute>
             }
         ]
     }

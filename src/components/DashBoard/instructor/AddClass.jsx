@@ -60,7 +60,7 @@ const AddClass = () => {
             });
     };
     return (
-        <AddClassForm
+        <AddClassForm 
             handleSubmit={handleSubmit}
             onSubmit={onSubmit}
             register={register}

@@ -6,9 +6,9 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
     const { user } = useContext(AuthContext);
 
     return (
-        <section className="max-w-5xl p-6 mx-auto bg-white rounded-md shadow-md  ">
-            <h2 className="text-lg bg-teal-400 px-5 py-2 rounded-md text-white font-semibold  capitalize ">
-                Add a Class
+        <div className="max-w-5xl md:mt-48  p-6 mx-auto bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 rounded-sm shadow-sm  ">
+            <h2 className="text-lg px-5 py-2 rounded-md text-slate-700 font-semibold  capitalize ">
+                Add Your Class
             </h2>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -22,7 +22,7 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
                             {...register("className", { required: true })}
                             type="text"
                             placeholder="class name"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40   focus:outline-none focus:ring"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-indigo-400 focus:ring-indigo-400 focus:ring-opacity-40   focus:outline-none focus:ring"
                         />
                     </div>
 
@@ -35,7 +35,7 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
                             {...register("image", { required: true })}
                             placeholder="image"
                             type="file"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40   focus:outline-none focus:ring"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-indigo-400 focus:ring-indigo-400 focus:ring-opacity-40   focus:outline-none focus:ring"
                         />
                     </div>
 
@@ -50,7 +50,7 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
                             //   disabled 
                             placeholder="your name"
                             type="text"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40   focus:outline-none focus:ring"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-indigo-400 focus:ring-indigo-400 focus:ring-opacity-40   focus:outline-none focus:ring"
                         />
                     </div>
 
@@ -65,7 +65,7 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
                             {...register("email", { required: true })}
                             value={user?.email}
                             //   disabled 
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40   focus:outline-none focus:ring"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-indigo-400 focus:ring-indigo-400 focus:ring-opacity-40   focus:outline-none focus:ring"
                         />
                     </div>
                     <div>
@@ -77,7 +77,7 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
                             type="number"
                             {...register("seats", { required: true, valueAsNumber: true })}
                             placeholder="seats"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40   focus:outline-none focus:ring"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-indigo-400 focus:ring-indigo-400 focus:ring-opacity-40   focus:outline-none focus:ring"
                         />
                     </div>
                     <div>
@@ -89,13 +89,13 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
                             placeholder="Price"
                             {...register("price", { required: true, valueAsNumber: true })}
                             type="number"
-                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40   focus:outline-none focus:ring"
+                            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md       focus:border-indigo-400 focus:ring-indigo-400 focus:ring-opacity-40   focus:outline-none focus:ring"
                         />
                     </div>
                 </div>
 
                 <div className="flex justify-end mt-6">
-                    <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+                    <button className="px-8 py-2 font-semibold  transition-colors duration-300 transform hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 rounded-none border border-black text-black  focus:outline-none focus:bg-gray-600">
                         {loading ? (
                             <div className="w-5 h-5 rounded-full border-dashed border-white animate-spin border-2 m-auto" />
                         ) : (
@@ -104,7 +104,7 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
                     </button>
                 </div>
             </form>
-        </section>
+        </div>
     );
 };
 
