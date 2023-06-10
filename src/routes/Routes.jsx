@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddClass from "../components/DashBoard/instructor/AddClass";
+import MyClasses from "../components/DashBoard/instructor/MyClasses";
 import SelectedClasses from "../components/DashBoard/selected classes/SelectedClasses";
 import DashBoard from "../layouts/DashBoard";
 import Main from "../layouts/Main";
@@ -57,7 +59,12 @@ export const router = createBrowserRouter([
                 element: <SelectedClasses />
             },
             {
-                
+                path: 'addClass',
+                element : <AddClass/>
+            },
+            {
+                path: 'myClasses',
+                element : <MyClasses/>
             }
         ]
     }

@@ -17,7 +17,6 @@ const Login = () => {
 
 
     const onSubmit = data => {
-        console.log(data);
 
         // sign in with email and pass 
         if (user?.email) {
