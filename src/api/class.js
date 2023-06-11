@@ -23,4 +23,20 @@ export const getClasses = async email => {
     const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/classes/${email}`)
     const data = await response.json()
     return data
-  }
+  };
+
+
+
+  // update a class
+export const updateRoom = async (roomData, id) => {
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/classes/${id}`, {
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify(roomData),
+  })
+
+  const data = await response.json()
+  return data
+}
