@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaClipboardList } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import { getAllClass } from '../../api/class';
 import ClassCard from './ClassCard';
 import './classes.css'
 
 const Classes = () => {
+    const [classes, setClasses] = useState([])
 
-    const classes = useLoaderData()
+
+    useEffect(() => {
+        getAllClass().then(res => setClasses(res))
+    }, [])
 
     return (
         <div className='class-bg mb-20'>
@@ -18,7 +23,7 @@ const Classes = () => {
 
             <div className='md:grid grid-cols-3 container mx-auto'>
                 {
-                   classes.map((clash,index) => <ClassCard key={index} clash={clash}  />)
+                    classes.map((clash, index) => <ClassCard key={index} clash={clash} />)
                 }
             </div>
         </div>

@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 const SelectedClassRow = ({ singleClass, index, classes, setClasses }) => {
 
-    const { class_name, image, price, teacher, available_seats, _id } = singleClass || {};
+    const { className, image, price, seats, _id,name } = singleClass || {};
 
 
 
@@ -50,17 +50,17 @@ const SelectedClassRow = ({ singleClass, index, classes, setClasses }) => {
             <td>
                 {index + 1}
             </td>
-            <td className='md:flex flex-col items-center'>
+            <td className='md:flex flex-col items-center bg-slate-100 w-fit mx-auto '>
                 <div className=" w-52">
-                    <img src={image} />
+                    <img src={image} className="rounded-md  w-full h-[100px]" />
                 </div>
-                <h1 className='bg-slate-400 text-white w-fit px-14 text-base font-bold '>{class_name}</h1>
+                <h1 className='bg-slate-400 text-white w-fit px-14 text-base font-bold rounded-b-md'>{className}</h1>
             </td>
             <td>
-                {teacher}
+                {name}
             </td>
             <td>
-                {available_seats}
+                {seats}
             </td>
             <td>
                 ${price}

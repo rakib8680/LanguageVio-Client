@@ -21,16 +21,16 @@ import './popularclasses.css'
 // import required modules 
 import { FreeMode, Pagination } from "swiper";
 import ClassesCard from "./ClassesCard";
+import { getAllClass } from "../../../api/class";
 
 export default function PopularClasses() {
 
     const [classes, setClasses] = useState([])
 
+
+
     useEffect(() => {
-        const url = './classes.json'
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setClasses(data))
+        getAllClass().then(res => setClasses(res))
     }, [])
 
 
