@@ -16,7 +16,7 @@ const MyClassesRow = ({ singleClass, index, classes, setClasses }) => {
             </td>
             <td className='md:flex flex-col items-center bg-slate-100 w-fit mx-auto '>
                 <div className=" w-52">
-                    <img src={image} className="rounded-md" />
+                    <img src={image} className="rounded-md  w-full h-[100px]" />
                 </div>
                 <h1 className='bg-slate-400 text-white w-fit px-14 text-base font-bold rounded-b-md'>{className}</h1>
             </td>

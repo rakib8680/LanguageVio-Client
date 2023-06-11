@@ -3,7 +3,9 @@
 // save a user to database
 export const saveUser = user => {
   const currentUser = {
-    email: user.email,
+    email: user?.email,
+    name: user?.displayName,
+    image: user?.photoURL
   }
 
   fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${user?.email}`, {
@@ -24,4 +26,12 @@ export const getRole = async email => {
   const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${email}`)
   const user = await response.json()
   return user?.role
+};
+
+
+// get all users 
+export const getAllUsers = async email => {
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/users`)
+  const users = await response.json()
+  return users
 }

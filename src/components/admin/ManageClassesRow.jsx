@@ -18,18 +18,17 @@ const ManageClassesRow = ({ singleClass, index, classes, setClasses }) => {
             </td>
             <td className='flex flex-col items-center bg-slate-100 w-fit mx-auto '>
                 <div className=" w-52">
-                    <img src={image} className="rounded-md" />
+                    <img src={image} className="rounded-md w-full h-[110px]" />
                 </div>
                 <h1 className='bg-slate-300 text-slate-600 w-fit px-14 text-base font-bold rounded-b-md'>{className}</h1>
             </td>
             <td >
                 <div className='md:flex flex-col items-center w-fit mx-auto'>
                     <img src={singleClass?.teacher?.image} className="mask mask-squircle" />
-
                     <h1 className=' text-slate-700 w-fit px-14 text-sm font-bold rounded-b-md'>{email}</h1>
                 </div>
             </td>
-
+        
             <td>
                 {seats}
             </td>
