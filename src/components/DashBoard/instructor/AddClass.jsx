@@ -39,8 +39,7 @@ const AddClass = () => {
                     status: "pending",
                 };
                 addClass(classesData)
-                    .then((res) => {
-                        console.log(res);
+                    .then(res => {
                         if (res.insertedId) {
                             toast.success("Class added successfully");
                             setLoading(false);
