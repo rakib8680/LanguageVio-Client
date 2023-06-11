@@ -1,15 +1,30 @@
 import React from 'react';
-import { BiCheck } from 'react-icons/bi'
-import { RxCross2 } from 'react-icons/rx'
-import { MdFeedback } from 'react-icons/md';
+import toast from 'react-hot-toast';
+import { setRole } from '../../api/auth';
 
-const ManageUsersRow = ({ singleClass, index, users, setUsers }) => {
+const ManageUsersRow = ({ singleClass, index }) => {
 
-    console.log(singleClass);
+    const { name, image, role, email } = singleClass || {};
 
-    const { name, image, _id, role, email } = singleClass || {};
+    const handleAdmin = email => {
+        setRole(email, 'admin')
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('User became Admin');
+                    window.location.reload();
+                }
+            })
+    }
+    const handleInstructor = email => {
+        setRole(email, 'instructor')
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('User became Instructor');
+                    window.location.reload();
+                }
+            })
+    }
 
-    console.log(role === 'admin');
 
     return (
         <tr className=' text-center mx-auto border-indigo-200  border-y  text-base font-medium'>
@@ -28,11 +43,11 @@ const ManageUsersRow = ({ singleClass, index, users, setUsers }) => {
             <td>
                 <p className={`${!role && 'bg-green-300 px-3 rounded-full mx-auto w-fit'} ${role === 'instructor' && 'bg-indigo-300 px-3 rounded-full mx-auto w-fit'} ${role === 'admin' && 'bg-sky-300 px-3 rounded-full mx-auto w-fit'}`}>{role || 'student'}</p>
             </td>
-            <td className='space-y-2 flex  flex-col justify-center  w-1/2 mx-auto '>
-                <button className=' bg-indigo-400  text-white btn  tooltip-left tooltip flex ' data-tip="make instructor">
+            <td onClick={() => handleInstructor(email)} className='space-y-2 flex  flex-col justify-center  w-1/2 mx-auto '>
+                <button className=' bg-indigo-400  text-white btn  tooltip-left tooltip flex ' data-tip="make instructor"  disabled={role === 'instructor' && true} >
                     Make Instructor
                 </button>
-                <button className=' bg-sky-400 text-white btn tooltip-left tooltip flex ' data-tip="make admin" disabled={role === 'admin' && true} >
+                <button onClick={() => handleAdmin(email)} className=' bg-sky-400 text-white btn tooltip-left tooltip flex ' data-tip="make admin" disabled={role === 'admin' && true} >
                     Make Admin
                 </button>
             </td>

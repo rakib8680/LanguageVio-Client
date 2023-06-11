@@ -5,7 +5,7 @@ export const saveUser = user => {
   const currentUser = {
     email: user?.email,
     name: user?.displayName,
-    image: user?.photoURL
+    image: user?.photoURL,
   }
 
   fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${user?.email}`, {
@@ -18,6 +18,22 @@ export const saveUser = user => {
     .then(res => res.json())
     .then(data => console.log(data))
 };
+
+
+// set role 
+export const setRole = (email,role) => {
+  const currentUser = {
+    role: role,
+  }
+
+  return fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${email}`, {
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify(currentUser),
+  }).then(res => res.json())
+}
 
 
 

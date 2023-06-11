@@ -39,10 +39,10 @@ const ManageClassesRow = ({ singleClass, index, classes, setClasses }) => {
                 <p className={`${status === 'pending' && 'bg-yellow-300 px-3 rounded-full mx-auto w-fit'} ${status === 'approved' && 'bg-green-300 px-3 rounded-full mx-auto w-fit'} ${status === 'denied' && 'bg-red-300 px-3 rounded-full mx-auto w-fit'}`}>{status}</p>
             </td>
             <td className='space-y-5'>
-                <button className=' bg-green-400  text-white btn btn-circle  tooltip-left tooltip flex tooltip-success' data-tip="Approve">
+                <button className=' bg-green-400  text-white btn btn-circle  tooltip-left tooltip flex tooltip-success' data-tip="Approve" disabled={status === 'approved' && true}>
                     <BiCheck size={33} />
                 </button>
-                <button className=' bg-red-400 text-white btn btn-circle tooltip-left tooltip flex tooltip-warning ' data-tip="Deny" >
+                <button className=' bg-red-400 text-white btn btn-circle tooltip-left tooltip flex tooltip-warning ' data-tip="Deny" disabled={status === 'approved' && true}>
                     <RxCross2 size={27} />
                 </button>
                 <button className=' bg-blue-400 text-white btn btn-circle tooltip-left tooltip flex tooltip-info ' data-tip="Feedback">

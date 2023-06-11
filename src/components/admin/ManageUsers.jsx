@@ -33,8 +33,6 @@ const ManageUsers = () => {
                                     singleClass={singleClass}
                                     index={index}
                                     key={index}
-                                    setUsers={setUsers}
-                                    users={users}
                                 />)
                         }
                     </tbody>
