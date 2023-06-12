@@ -35,14 +35,18 @@ export default function PopularClasses() {
 
 
     return (
-        <div className="classes-bg py-16 ">
+        <div className="classes-bg py-16">
             <div className="pt-10 ">
                 <h1 className='text-center text-3xl text-slate-800'>Popular Classes</h1>
                 <h1 className='text-center text-sm text-slate-200 border w-fit mx-auto px-3 mt-5 bg-primary'>Enroll Now!!</h1>
                 <hr className='w-3/12 mx-auto mt-7 border border-slate-300' />
             </div>
             <Swiper
-                slidesPerView={3}
+                // slidesPerView={3}
+                breakpoints={{
+                    640: { width: 640, slidesPerView: 2 },
+                    768: { width: 768, slidesPerView: 2 }
+                }}
                 spaceBetween={30}
                 freeMode={true}
                 pagination={{

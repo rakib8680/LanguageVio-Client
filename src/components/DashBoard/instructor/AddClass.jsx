@@ -7,8 +7,12 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import AddClassForm from "./AddClassForm";
 import { imageUpload } from "../../../api/utils";
 import { addClass } from "../../../api/class";
+import useTitle from "../../../Hooks/useTitle";
 
 const AddClass = () => {
+
+    useTitle('Add Class');
+
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);

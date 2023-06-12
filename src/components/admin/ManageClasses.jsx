@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { getAllClass } from '../../api/class';
+import useTitle from '../../Hooks/useTitle';
 import ManageClassesRow from './ManageClassesRow';
 
 const ManageClasses = () => {
-
+    useTitle('Manage Classes');
     const allClasses = useLoaderData()
 
 

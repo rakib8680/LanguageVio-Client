@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { FaClipboardList } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
 import { getAllClass } from '../../api/class';
+import useTitle from '../../Hooks/useTitle';
 import ClassCard from './ClassCard';
 import './classes.css'
 
 const Classes = () => {
     const [classes, setClasses] = useState([])
-
+    useTitle('All Classes')
 
     useEffect(() => {
         getAllClass().then(res => setClasses(res))

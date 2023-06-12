@@ -2,8 +2,10 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaUsers } from 'react-icons/fa';
 import TeacherCard from './teacherCard';
+import useTitle from '../../Hooks/useTitle';
 
 const Instructors = () => {
+    useTitle('Instructors');
 
     const instructorsData = useLoaderData();
 

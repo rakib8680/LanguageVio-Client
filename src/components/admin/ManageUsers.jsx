@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getAllUsers } from '../../api/auth';
+import useTitle from '../../Hooks/useTitle';
 import ManageUsersRow from './ManageUsersRow';
 
 const ManageUsers = () => {
+    useTitle('Manage Users');
     const [users, setUsers] = useState([]);
 
     useEffect(() => {

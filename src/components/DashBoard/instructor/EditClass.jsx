@@ -12,14 +12,12 @@ const EditClass = () => {
     useTitle('Edit Class')
 
     const singleClass = useLoaderData();
-    console.log(singleClass);
     const { className, seats, price, _id } = singleClass || {};
 
     const navigate = useNavigate()
     const { user } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data);
         updateClass(data, _id)
             .then(data => {
                 if (data.modifiedCount > 0) {

@@ -2,8 +2,10 @@ import React from 'react';
 import Lottie from 'lottie-react';
 import errorAnimation from '../../assets/error2.json'
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const ErrorPage = () => {
+    useTitle('Error')
     return (
         <div className="flex flex-col items-center justify-center  from-blue-200 via-red-200 to-indigo-200 min-h-screen bg-gradient-to-br ">
             <div className='m-0 p-0 '>

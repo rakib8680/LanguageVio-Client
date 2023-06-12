@@ -4,11 +4,14 @@ import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { saveUser } from '../../api/auth';
+import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../../Providers/AuthProvider';
 import GoogleLogin from './GoogleLogin';
 import './register.css'
 
 const Register = () => {
+
+    useTitle('Register');
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();

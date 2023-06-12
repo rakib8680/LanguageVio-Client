@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
+import useTitle from '../../../Hooks/useTitle';
 import { AuthContext } from '../../../providers/AuthProvider';
 import SelectedClassRow from './SelectedClassRow';
 
 const SelectedClasses = () => {
+
+    useTitle('Selected Classes')
 
     const { user } = useContext(AuthContext)
     const [classes, setClasses] = useState([])

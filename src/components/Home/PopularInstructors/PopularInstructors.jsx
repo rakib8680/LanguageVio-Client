@@ -33,7 +33,11 @@ const PopularInstructors = () => {
                 <hr className='w-3/12 mx-auto mt-7 border border-slate-300' />
             </div>
             <Swiper
-                slidesPerView={3}
+                // slidesPerView={3}
+                breakpoints={{
+                    640: { width: 640, slidesPerView: 2 },
+                    768: { width: 768, slidesPerView: 2 }
+                }}
                 spaceBetween={30}
                 freeMode={true}
                 pagination={{

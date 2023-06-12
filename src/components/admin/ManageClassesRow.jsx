@@ -5,7 +5,6 @@ import { MdFeedback } from 'react-icons/md';
 
 const ManageClassesRow = ({ singleClass, index, classes, setClasses }) => {
 
-    console.log(singleClass);
 
     const { className, image, price, seats, _id, status, email } = singleClass || {};
 
