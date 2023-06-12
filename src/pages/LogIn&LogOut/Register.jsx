@@ -40,10 +40,10 @@ const Register = () => {
 
 
     return (
-        <div className="hero  bg-base-200  md:h-[1000px]  background ">
+        <div className="hero  bg-base-200  md:h-[1000px]  background py-20 md:py-0">
             <div className="">
                 <h1 className='text-center text-3xl pb-7 text-white'>Sign Up</h1>
-                <div className="card  md:w-[450px] shadow-lg bg-white backdrop-blur-md bg-opacity-10  border border-slate-500 rounded-md">
+                <div className="card  md:w-[450px]  w-[360px] shadow-lg bg-white backdrop-blur-md bg-opacity-10  border border-slate-500 rounded-md">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
 

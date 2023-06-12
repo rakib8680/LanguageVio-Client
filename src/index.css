@@ -17,7 +17,7 @@
 };
 
 .login-page-design{
-    @apply flex flex-col md:flex-row bg-base-200 justify-center items-center gap-40 bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 
+    @apply flex flex-col md:flex-row bg-base-200 justify-center items-center gap-10 md:gap-40 bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 
 };
 
 .sidebar-container{
