@@ -17,7 +17,11 @@ const Register = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-        // console.log(data)
+
+        if (data.password !== data.confirm) {
+            toast.error('Password didnt match')
+            return
+        }
 
         // register new user 
         registerUser(data.email, data.password)
@@ -34,9 +38,9 @@ const Register = () => {
 
 
     return (
-        <div className="hero  bg-base-200  md:h-[850px] background ">
+        <div className="hero  bg-base-200  md:h-[1000px]  background ">
             <div className="">
-            <h1 className='text-center text-3xl pb-7 text-white'>Sign Up</h1>
+                <h1 className='text-center text-3xl pb-7 text-white'>Sign Up</h1>
                 <div className="card  md:w-[450px] shadow-lg bg-white backdrop-blur-md bg-opacity-10  border border-slate-500 rounded-md">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
@@ -83,24 +87,34 @@ const Register = () => {
                                 required: true,
                                 minLength: 6,
                                 maxLength: 20,
-                                pattern: /(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])/
+                                pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                             })} placeholder="password" className="input input-bordered " />
                             {errors.password?.type === 'required' && <p className="text-error mt-2">Password is required</p>}
                             {errors.password?.type === 'minLength' && <p className="text-error mt-2">Password must be 6 characters or Above</p>}
                             {errors.password?.type === 'maxLength' && <p className="text-error mt-2">Password must be less than 20 characters</p>}
-                            {errors.password?.type === 'pattern' && <p className="text-error mt-2">Password must have one Uppercase one lower case and one number </p>}
-                            {/* TODO : use special character validation */}
+                            {errors.password?.type === 'pattern' && <p className="text-error mt-2">Password must have one Uppercase one lower case one number and a special character.</p>}
                             <div className='absolute right-3 top-[50px] cursor-pointer' onClick={() => setShowPass(!showPass)}>
                                 {
                                     showPass ? <FaEyeSlash size={22} /> : <FaEye size={20} />
                                 }
                             </div>
-
-                            <label className="label">
-                                <a href="#" className="label-text-alt hover:link my-3">Forgot password ?</a>
-                            </label>
-
                         </div>
+
+
+
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Confirm Password</span>
+                            </label>
+                            <input type="password"  {...register("confirm", { required: true })} name="confirm" placeholder="confirm password" className="input input-bordered" />
+                        </div>
+
+
+
+                        <label className="label">
+                            <a href="#" className="label-text-alt hover:link my-3">Forgot password ?</a>
+                        </label>
+
 
 
 
