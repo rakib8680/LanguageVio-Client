@@ -13,7 +13,7 @@ const Sidebar = () => {
     const navigate = useNavigate()
     const { user, logOut, role } = useContext(AuthContext)
 
-    console.log(role);
+    // console.log(role);
 
     const [isActive, setActive] = useState('false')
 
@@ -58,7 +58,6 @@ const Sidebar = () => {
                                 <img
                                     className='object-cover w-24 h-24 mx-2 rounded-full'
                                     src={user?.photoURL}
-                                    alt='avatar'
                                     referrerPolicy='no-referrer'
                                 />
                             </Link>
@@ -66,6 +65,7 @@ const Sidebar = () => {
                                 <h4 className='mx-2 mt-2 font-medium text-gray-800  hover:underline'>
                                     {user?.displayName}
                                 </h4>
+                                <h1 className='text-center bg-sky-800 text-yellow-300 font-bold rounded-full'>{ role ? role : 'student'}</h1>
                             </Link>
                         </div>
                         <div className='divider w-2/3 mx-auto'></div>

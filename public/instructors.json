@@ -22,7 +22,7 @@
         "level": "Beginner",
         "schedule": "Tuesday, Thursday",
         "time": "2:00 PM - 4:00 PM",
-        "image": "/src/assets/instructor.jpg",
+        "image": "https://i.pinimg.com/originals/14/17/91/141791e52c8b60893c1f8874460f1ef5.jpg",
         "email": "abdullah.rakib.00@gmail.com"
     },
     {
@@ -35,7 +35,7 @@
         "level": "Advanced",
         "schedule": "Monday, Wednesday",
         "time": "6:00 PM - 8:00 PM",
-        "image": "/src/assets/instructor.jpg",
+        "image": "https://media.istockphoto.com/id/610021016/photo/young-professor.jpg?s=612x612&w=0&k=20&c=4Z8-S0QVqCKkujyw8ZFTmDpZreiK7rceBYNhptQ7k3I=",
         "email": "abdullah.rakib.00@gmail.com"
     },
     {
@@ -48,7 +48,7 @@
         "level": "Intermediate",
         "schedule": "Tuesday, Thursday, Saturday",
         "time": "9:00 AM - 11:00 AM",
-        "image": "/src/assets/instructor.jpg",
+        "image": "https://media.istockphoto.com/id/515264678/photo/portrait-of-confident-caucasian-male-teacher-in-classroom.jpg?s=612x612&w=0&k=20&c=XxZPrrrC7XsjzLZN1TqKnp6k4OozMxLSv_zrvCDjP7I=",
         "email": "abdullah.rakib.00@gmail.com"
     },
     {
@@ -61,7 +61,7 @@
         "level": "Advanced",
         "schedule": "Monday, Wednesday, Friday",
         "time": "4:00 PM - 6:00 PM",
-        "image": "/src/assets/instructor.jpg",
+        "image": "https://img.freepik.com/free-photo/portrait-female-teacher-white_114579-77743.jpg?w=2000",
         "email": "abdullah.rakib.00@gmail.com"
     },
     {
@@ -74,7 +74,7 @@
         "level": "Beginner",
         "schedule": "Tuesday, Thursday",
         "time": "6:00 PM - 8:00 PM",
-        "image": "/src/assets/instructor.jpg",
+        "image": "https://media.istockphoto.com/id/687830554/photo/portrait-of-a-happy-latin-american-teacher-at-the-school.webp?b=1&s=170667a&w=0&k=20&c=uNKFMoebdWk1fMYsAQicTvDARuMVibx4pskppByrh5Q=",
         "email": "abdullah.rakib.00@gmail.com"
     }
 ]

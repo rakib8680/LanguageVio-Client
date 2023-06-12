@@ -26,13 +26,13 @@ export const getClasses = async email => {
 
 
 // update a class
-export const updateRoom = async (roomData, id) => {
+export const updateClass = async (classData, id) => {
   const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/classes/${id}`, {
-    method: 'PUT',
+    method: 'PATCH',
     headers: {
       'content-type': 'application/json',
     },
-    body: JSON.stringify(roomData),
+    body: JSON.stringify(classData),
   })
 
   const data = await response.json()

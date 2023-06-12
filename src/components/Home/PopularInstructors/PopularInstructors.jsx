@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
 // Import Swiper React components 
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-
-
-
 // import required modules 
 import { FreeMode, Pagination } from "swiper";
 import InstructorCard from "./InstructorCard";
-import video from '../../../assets/teaching.mp4'
 
 
 
@@ -37,11 +32,6 @@ const PopularInstructors = () => {
                 <h1 className='text-center text-sm text-slate-200 border w-fit mx-auto px-3 mt-5 bg-primary'>Enroll Now!!</h1>
                 <hr className='w-3/12 mx-auto mt-7 border border-slate-300' />
             </div>
-            {/* <div>
-                <video autoPlay={true} controls loop>
-                    <source src={video} type="video/mp4" />
-                </video>
-            </div> */}
             <Swiper
                 slidesPerView={3}
                 spaceBetween={30}

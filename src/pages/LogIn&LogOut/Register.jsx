@@ -11,7 +11,7 @@ import './register.css'
 const Register = () => {
 
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPass, setShowPass] = useState(false)
     const { updateUser, registerUser } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -29,7 +29,6 @@ const Register = () => {
                 updateUser(data.name, data.photoURL)
                 toast.success('Successfully registered')
                 saveUser(result.user)
-
                 navigate('/')
             })
             .catch(error => toast.error(error.message));

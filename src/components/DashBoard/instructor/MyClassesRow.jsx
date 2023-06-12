@@ -1,9 +1,9 @@
 import React from 'react';
-import { FaPencilRuler,  } from 'react-icons/fa';
-import {MdFeedback} from 'react-icons/md';
+import { FaPencilRuler, } from 'react-icons/fa';
+import { MdFeedback } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-const MyClassesRow = ({ singleClass, index, classes, setClasses }) => {
+const MyClassesRow = ({ singleClass, index}) => {
 
     const { className, image, price, seats, _id, status, enrolled } = singleClass || {};
 
@@ -32,11 +32,11 @@ const MyClassesRow = ({ singleClass, index, classes, setClasses }) => {
                 ${price}
             </td>
             <td>
-                <p className={`${status === 'pending' && 'bg-yellow-300 px-3 rounded-full mx-auto w-fit'} ${status === 'approved' && 'bg-green-300 px-3 rounded-full mx-auto w-fit' } ${status === 'denied' && 'bg-red-300 px-3 rounded-full mx-auto w-fit' }`}>{status}</p>
+                <p className={`${status === 'pending' && 'bg-yellow-300 px-3 rounded-full mx-auto w-fit'} ${status === 'approved' && 'bg-green-300 px-3 rounded-full mx-auto w-fit'} ${status === 'denied' && 'bg-red-300 px-3 rounded-full mx-auto w-fit'}`}>{status}</p>
             </td>
             <td className='space-y-5'>
                 <Link className='btn btn-square btn-info bg-blue-400 border-none btn-md text-white  tooltip-left tooltip flex tooltip-info' data-tip="FeedBack"><MdFeedback size={25} /></Link>
-                <button className='btn btn-square btn-success bg-green-600 text-white btn-md tooltip-left tooltip flex tooltip-success ' data-tip="Edit Class" ><FaPencilRuler size={20} /></button>
+                <Link to={`/dashboard/class/${_id}`} className='btn btn-square btn-success bg-green-600 text-white btn-md tooltip-left tooltip flex tooltip-success ' data-tip="Edit Class" ><FaPencilRuler size={20} /></Link>
             </td>
         </tr>
     );

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ManageClasses from "../components/admin/ManageClasses";
 import ManageUsers from "../components/admin/ManageUsers";
 import AddClass from "../components/DashBoard/instructor/AddClass";
+import EditClass from "../components/DashBoard/instructor/EditClass";
 import MyClasses from "../components/DashBoard/instructor/MyClasses";
 import SelectedClasses from "../components/DashBoard/selected classes/SelectedClasses";
 import DashBoard from "../layouts/DashBoard";
@@ -59,11 +60,11 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: 'selectedClasses',
-                element: <SelectedClasses />
+                element: <PrivateRoute> <SelectedClasses /> </PrivateRoute>
             },
             {
                 path: 'addClass',
-                element: <AddClass />
+                element: <PrivateRoute> <AddClass /> </PrivateRoute>
             },
             {
                 path: 'myClasses',
@@ -75,11 +76,16 @@ export const router = createBrowserRouter([
             {
                 path: 'manageClasses',
                 element: <PrivateRoute> <ManageClasses /> </PrivateRoute>,
-                loader: ()=>fetch(`${import.meta.env.VITE_API_BASE_URL}/classes`)
+                loader: () => fetch(`${import.meta.env.VITE_API_BASE_URL}/classes`)
             },
             {
                 path: 'manageUsers',
                 element: <PrivateRoute> <ManageUsers /> </PrivateRoute>
+            },
+            {
+                path: 'class/:id',
+                element: <PrivateRoute> <EditClass></EditClass> </PrivateRoute>,
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_BASE_URL}/class/${params.id}`)
             }
         ]
     }
