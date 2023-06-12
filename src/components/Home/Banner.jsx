@@ -9,10 +9,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Banner = () => {
     return (
         <Carousel autoPlay={true} showThumbs={false}  className='text-center'>
-            <div className='banner-bg py-20'>
-                <div className='flex justify-around items-center container mx-auto '>
+            <div className='banner-bg py-20 px-4 md:px-0'>
+                <div className='md:flex justify-around items-center container mx-auto '>
                     <div className='text-slate-800 space-y-7 md:w-[570px] text-left'>
-                        <h1 className='text-6xl font-black leading-tight'>New language, new opportunities, new you</h1>
+                        <h1 className='md:text-6xl text-4xl font-black leading-tight'>New language, new opportunities, new you</h1>
                         <div className=' text-slate-950 leading-8'>
                             <p className='flex items-center gap-3'><FaBookReader size={21} className='text-slate-600' />Take customizable 1-on-1 lessons trusted by millions of users</p>
                             <p className='flex items-center gap-3'><FaBookReader size={21} className='text-slate-600' />Learn from certified teachers that fit your budget and schedule</p>
@@ -25,10 +25,10 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className='banner-bg2 py-20'>
-                <div className='flex justify-around items-center container mx-auto '>
+            <div className='banner-bg2 py-20  px-4 md:px-0'>
+                <div className='md:flex justify-around items-center container mx-auto '>
                     <div className='text-slate-800 space-y-7 md:w-[570px] text-left'>
-                        <h1 className='text-6xl font-black leading-tight'>New language, new opportunities, new you</h1>
+                        <h1 className='md:text-6xl text-4xl  font-black leading-tight'>New language, new opportunities, new you</h1>
                         <div className=' text-slate-950 leading-8'>
                             <p className='flex items-center gap-3'><FaBookReader size={21} className='text-slate-600' />Take customizable 1-on-1 lessons trusted by millions of users</p>
                             <p className='flex items-center gap-3'><FaBookReader size={21} className='text-slate-600' />Learn from certified teachers that fit your budget and schedule</p>
@@ -41,10 +41,10 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className='banner-bg3 py-20'>
-                <div className='flex justify-around items-center container mx-auto '>
+            <div className='banner-bg3 py-20  px-4 md:px-0'>
+                <div className='md:flex justify-around items-center container mx-auto '>
                     <div className='text-slate-800 space-y-7 md:w-[570px] text-left'>
-                        <h1 className='text-6xl font-black leading-tight'>New language, new opportunities, new you</h1>
+                        <h1 className='md:text-6xl text-4xl  font-black leading-tight'>New language, new opportunities, new you</h1>
                         <div className=' text-slate-950 leading-8'>
                             <p className='flex items-center gap-3'><FaBookReader size={21} className='text-slate-600' />Take customizable 1-on-1 lessons trusted by millions of users</p>
                             <p className='flex items-center gap-3'><FaBookReader size={21} className='text-slate-600' />Learn from certified teachers that fit your budget and schedule</p>

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo2.jpg'
-import logo2 from '../../../assets/logo1.jpg'
 import { AuthContext } from '../../../Providers/AuthProvider';
 import toast from 'react-hot-toast';
 
@@ -27,32 +26,27 @@ const Navbar = () => {
                     <label tabIndex={0} className="btn btn-ghost lg:hidden ">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow backdrop-blur-md bg-base-100  bg-opacity-80 rounded-box w-52 ">
+                    <ul tabIndex={0} className=" z-10  menu menu-compact dropdown-content mt-3 p-2 shadow backdrop-blur-md bg-base-100  bg-opacity-80 rounded-box w-52 ">
                         <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <NavLink to='/allToys' className={({ isActive }) => (isActive ? 'font-semibold text-primary' : 'default')}>All Toys</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/blog' className={({ isActive }) => (isActive ? 'font-semibold text-primary' : 'default')}>Blogs</NavLink>
+                            <NavLink to='/' className={({ isActive }) => (isActive ? 'nav-link-active' : 'nav-link-passive')}>Home</NavLink>
 
                         </li>
-                        {user?.email ?
-                            <li>
-                                <NavLink to='/addToy' className={({ isActive }) => (isActive ? 'font-semibold text-primary' : 'default')}>Add a Toy</NavLink>
-                                <NavLink to='/myToys' className={({ isActive }) => (isActive ? 'font-semibold text-primary' : 'default')}>My Toys</NavLink>
-                            </li>
-                            :
-                            <li>
-                                <NavLink to='/login' className={({ isActive }) => (isActive ? 'font-semibold text-primary' : 'default')}>Login</NavLink>
-                                <NavLink to='/register' className={({ isActive }) => (isActive ? 'font-semibold text-primary' : 'default')}>Register</NavLink>
+                        <li>
+                            <NavLink to='/classes' className={({ isActive }) => (isActive ? 'nav-link-active' : 'nav-link-passive')}>Classes</NavLink>
 
+                        </li>
+                        <li>
+                            <NavLink to='/instructors' className={({ isActive }) => (isActive ? 'nav-link-active' : 'nav-link-passive')}>Instructors</NavLink>
+                        </li>
+
+                        {user &&
+                            <li>
+                                <NavLink to='/dashboard' className={({ isActive }) => (isActive ? 'nav-link-active' : 'nav-link-passive')}>Dashboard</NavLink>
                             </li>
                         }
                     </ul>
                 </div>
-                <Link to="/" className="flex flex-col items-center  ml-20 md:ml-0 gap-0">
+                <Link to="/" className="flex flex-col items-center ml-8  md:ml-0 gap-0">
                     <img src={logo} className="md:w-20 md:h-20 w-16 h-16 ms- md:ms-4 mask mask-parallelogram-2" />
                     <h1 className='font-black md:ms-5 md:text-base md:leading-6 leading-6 ms-3 text-lg -mt-3 pb-2'>LANGUAGEVIO</h1>
                 </Link>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutReuse = ({img, h3, h1, p, flex}) => {
     return (
-        <div className={`flex ${flex}  justify-center items-center gap-28 pb-10`}>
+        <div className={`md:flex ${flex}  justify-center items-center gap-28 pb-10 px-4 md:px-0`}>
                 <div className=''>
                     <img src={img} className='md:w-[550px]' />
                 </div>
