@@ -94,7 +94,7 @@ const AddClassForm = ({ handleSubmit, onSubmit, register, loading }) => {
                 </div>
 
                 <div className="flex justify-end mt-6">
-                    <button className="px-8 py-2 font-semibold  transition-colors duration-300 transform hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 rounded-none border border-black text-black  focus:outline-none focus:bg-gray-600">
+                    <button className="px-8 py-2 font-semibold  transition-colors duration-300 transform hover:bg-gradient-to-br from-indigo-100 via-red-100 to-purple-100 rounded-none border border-black text-black  focus:outline-none">
                         {loading ? (
                             <div className="w-5 h-5 rounded-full border-dashed border-white animate-spin border-2 m-auto" />
                         ) : (
