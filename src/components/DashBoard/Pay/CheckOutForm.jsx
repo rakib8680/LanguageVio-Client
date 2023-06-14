@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { useNavigate } from "react-router-dom";
+import './checkOutForm.css'
 
 const CheckOutForm = ({ price, _id }) => {
 
@@ -103,7 +104,7 @@ const CheckOutForm = ({ price, _id }) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className='flex  flex-col w-1/4 mt-60 mx-auto '>
+            <form onSubmit={handleSubmit} className='flex  flex-col w-1/4 mt-44 mx-auto '>
                 <CardElement
                     options={{
                         style: {
