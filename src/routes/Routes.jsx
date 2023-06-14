@@ -90,7 +90,7 @@ export const router = createBrowserRouter([
             {
                 path: 'payment/:id',
                 element: <PrivateRoute> <Payment /> </PrivateRoute>,
-                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_BASE_URL}/class/${params.id}`)
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_BASE_URL}/payment/${params.id}`)
             }
         ]
     }
