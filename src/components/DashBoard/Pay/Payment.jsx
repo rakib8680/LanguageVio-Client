@@ -10,15 +10,14 @@ const stripePromise = loadStripe('pk_test_51NEVZ4HAK6N0L1dAGjeUdn63LKQbGi5xjJehU
 const Payment = () => {
 
     const yourClass = useLoaderData();
-    const { price } = yourClass
+    const { price, _id } = yourClass
     const totalPrice = parseFloat(price.toFixed(2))
-    console.log(price);
 
     return (
         <div>
             <h1 className='text-5xl'>Your Payment</h1>
             <Elements stripe={stripePromise}>
-                <CheckOutForm price={totalPrice} />
+                <CheckOutForm price={totalPrice} _id={_id} />
             </Elements>
         </div>
     );

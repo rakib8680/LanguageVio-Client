@@ -3,10 +3,12 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { useNavigate } from "react-router-dom";
 
-const CheckOutForm = ({ price }) => {
+const CheckOutForm = ({ price, _id }) => {
 
 
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext)
     const [cardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
@@ -17,6 +19,20 @@ const CheckOutForm = ({ price }) => {
     const elements = useElements();
 
 
+
+    const deleteClass = _id => {
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/cart/${_id}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    navigate('/dashboard/selectedClasses');
+                }
+            })
+
+    }
 
     useEffect(() => {
         if (price > 0) {
@@ -79,7 +95,8 @@ const CheckOutForm = ({ price }) => {
         console.log(paymentIntent);
         if (paymentIntent.status === 'succeeded') {
             toast.success('Payment Successful !! ')
-            setTransactionId(paymentIntent.id)
+            setTransactionId(paymentIntent.id);
+            deleteClass(_id)
         }
 
     }
