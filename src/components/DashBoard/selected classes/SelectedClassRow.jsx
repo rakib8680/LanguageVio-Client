@@ -66,7 +66,7 @@ const SelectedClassRow = ({ singleClass, index, classes, setClasses }) => {
                 ${price}
             </td>
             <td className='space-y-5'>
-                <Link className='btn btn-square btn-info bg-sky-400 border-none btn-md tooltip-left tooltip flex tooltip-info' data-tip="Pay Now"><FaWallet size={20} /></Link>
+                <Link to={`/dashboard/payment/${_id}`} className='btn btn-square btn-info bg-sky-400 border-none btn-md tooltip-left tooltip flex tooltip-info' data-tip="Pay Now"><FaWallet size={20} /></Link>
                 <button onClick={() => handleDelete(_id)} className='btn btn-square btn-warning btn-md tooltip-left tooltip flex tooltip-warning ' data-tip="Delete Class" ><FaTrash size={20} /></button>
             </td>
         </tr>

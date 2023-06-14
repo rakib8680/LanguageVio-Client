@@ -4,6 +4,7 @@ import ManageUsers from "../components/admin/ManageUsers";
 import AddClass from "../components/DashBoard/instructor/AddClass";
 import EditClass from "../components/DashBoard/instructor/EditClass";
 import MyClasses from "../components/DashBoard/instructor/MyClasses";
+import Payment from "../components/DashBoard/Pay/Payment";
 import SelectedClasses from "../components/DashBoard/selected classes/SelectedClasses";
 import DashBoard from "../layouts/DashBoard";
 import Main from "../layouts/Main";
@@ -84,6 +85,11 @@ export const router = createBrowserRouter([
             {
                 path: 'class/:id',
                 element: <PrivateRoute> <EditClass></EditClass> </PrivateRoute>,
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_BASE_URL}/class/${params.id}`)
+            },
+            {
+                path: 'payment/:id',
+                element: <PrivateRoute> <Payment /> </PrivateRoute>,
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_API_BASE_URL}/class/${params.id}`)
             }
         ]
