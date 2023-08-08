@@ -60,11 +60,17 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: 'selectedClasses',
-                element: <PrivateRoute> <SelectedClasses /> </PrivateRoute>
+                element:
+                    <PrivateRoute>
+                        <SelectedClasses />
+                    </PrivateRoute>
             },
             {
                 path: 'addClass',
-                element: <PrivateRoute> <AddClass /> </PrivateRoute>
+                element:
+                    <PrivateRoute>
+                        <AddClass />
+                    </PrivateRoute>
             },
             {
                 path: 'myClasses',
@@ -75,16 +81,25 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'manageClasses',
-                element: <PrivateRoute> <ManageClasses /> </PrivateRoute>,
+                element:
+                    <PrivateRoute>
+                        <ManageClasses />
+                    </PrivateRoute>,
                 loader: () => fetch(`${import.meta.env.VITE_API_BASE_URL}/classes`)
             },
             {
                 path: 'manageUsers',
-                element: <PrivateRoute> <ManageUsers /> </PrivateRoute>
+                element:
+                    <PrivateRoute>
+                        <ManageUsers />
+                    </PrivateRoute>
             },
             {
                 path: 'class/:id',
-                element: <PrivateRoute> <EditClass></EditClass> </PrivateRoute>,
+                element:
+                    <PrivateRoute>
+                        <EditClass/>
+                    </PrivateRoute>,
                 loader: ({ params }) => fetch(`${import.meta.env.VITE_API_BASE_URL}/class/${params.id}`)
             },
             {
