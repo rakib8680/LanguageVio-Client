@@ -23,7 +23,7 @@ const ManageClassesRow = ({ singleClass, index, classes, setClasses }) => {
             </td>
             <td >
                 <div className='md:flex flex-col items-center w-fit mx-auto'>
-                    <img src={singleClass?.teacher?.image} className="mask mask-squircle" />
+                    <img src={singleClass?.teacher?.image} className="mask mask-squircle w-20"  />
                     <h1 className=' text-slate-700 w-fit px-14 text-sm font-bold rounded-b-md'>{email}</h1>
                 </div>
             </td>
