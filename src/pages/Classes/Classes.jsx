@@ -8,6 +8,7 @@ import './classes.css'
 const Classes = () => {
     const [classes, setClasses] = useState([])
     useTitle('All Classes')
+    console.log(classes);
 
     useEffect(() => {
         getAllClass().then(res => setClasses(res))
@@ -22,8 +23,9 @@ const Classes = () => {
             </div>
 
             <div className='md:grid grid-cols-3 container mx-auto'>
+
                 {
-                    classes.map((clash, index) => <ClassCard key={index} clash={clash} />)
+                 classes.map((clash, index) => <ClassCard key={index} clash={clash} />)
                 }
             </div>
         </div>
