@@ -32,4 +32,4 @@ const Classes = () => {
     );
 };
 
-export default Classes;
+export default Classes;     
