@@ -20,20 +20,25 @@ const Register = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-
+        // console.log(data);
         if (data.password !== data.confirm) {
             toast.error('Password didnt match')
-            return
+            return;
         }
 
         // register new user 
         registerUser(data.email, data.password)
             .then((result) => {
-                updateUser(data.name, data.photoURL)
-                toast.success('Successfully registered')
-                saveUser(result.user)
-                navigate('/')
+                updateUser(data.name, data.photoURL)   
+                // console.log(result.user);
+                // console.log(result.user.photoURL);
+                .then(()=>{
+                    saveUser(result.user)
+                    toast.success('Successfully registered')
+                    navigate('/')
+                })
             })
+            
             .catch(error => toast.error(error.message));
 
     };

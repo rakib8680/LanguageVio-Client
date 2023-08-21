@@ -1,14 +1,17 @@
 
 
 // save a user to database
-export const saveUser = user => {
+export const saveUser = result => {
+  console.log(result);
+  // console.log(result?.displayName);
+  // console.log(result?.photoURL);
   const currentUser = {
-    email: user?.email,
-    name: user?.displayName,
-    image: user?.photoURL,
+    email: result?.email,
+    name: result?.displayName,
+    image: result?.photoURL,
   }
 
-  fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${user?.email}`, {
+  fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${result?.email}`, {
     method: 'PUT',
     headers: {
       'content-type': 'application/json',
