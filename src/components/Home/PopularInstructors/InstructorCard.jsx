@@ -20,8 +20,8 @@ const InstructorCard = ({ info }) => {
                 <p className="mt-2 text-gray-600">Class : {language}</p>
                 <p className="mt-2 text-gray-600">Schedule : {schedule}</p>
                 <div className="mt-4">
-                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Tag 1</span>
-                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">Tag 2</span>
+                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">teacher</span>
+                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">popular</span>
                 </div>
             </div>
         </div>
