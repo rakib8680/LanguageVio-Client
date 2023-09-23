@@ -5,7 +5,6 @@ const InstructorCard = ({ info }) => {
     const {
         teacher_name,
         experience,
-        students,
         language,
        schedule,
         image,

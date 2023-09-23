@@ -1,11 +1,37 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
 import ManageClassesRow from './ManageClassesRow';
+import { updateClass } from '../../api/class';
+
 
 const ManageClasses = () => {
     useTitle('Manage Classes');
-    const allClasses = useLoaderData()
+    const { classes } = useParams();
+    const [allClasses, setAllClasses] = useState([]);
+
+    // const allClasses = useLoaderData();
+
+
+    // update class status 
+    const updateClassStatus = (classStatus, _id) => {
+        const data = {
+            status: classStatus
+        }
+        updateClass(data, _id)
+    };
+
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/${classes}`)
+            .then(res => res.json())
+            .then(data => setAllClasses(data))
+    }, updateClassStatus)
+
+
+
+
+
+
 
 
     return (
@@ -33,6 +59,7 @@ const ManageClasses = () => {
                                     singleClass={singleClass}
                                     index={index}
                                     key={index}
+                                    updateClassStatus={updateClassStatus}
                                 />)
                         }
                     </tbody>

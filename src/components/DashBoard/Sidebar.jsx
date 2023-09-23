@@ -103,7 +103,7 @@ const Sidebar = () => {
                         role === 'admin' &&
                         <>
                             <NavLink
-                                to='/dashboard/manageClasses'
+                                to='/dashboard/manageClasses/classes'
                                 className={({ isActive }) =>
                                     `  menu ${isActive ? 'menu-active' : 'text-gray-600'
                                     }`

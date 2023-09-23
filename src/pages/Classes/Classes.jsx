@@ -25,7 +25,7 @@ const Classes = () => {
             <div className='md:grid grid-cols-3 container mx-auto'>
 
                 {
-                 classes.map((clash, index) => <ClassCard key={index} clash={clash} />)
+                 classes.map((clash, index) => clash.status === 'approved' && <ClassCard key={index} clash={clash} />)
                 }
             </div>
         </div>

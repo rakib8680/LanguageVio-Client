@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { } from 'react';
 import { BiCheck } from 'react-icons/bi'
 import { RxCross2 } from 'react-icons/rx'
 import { MdFeedback } from 'react-icons/md';
 
-const ManageClassesRow = ({ singleClass, index, classes, setClasses }) => {
+const ManageClassesRow = ({ singleClass, index, classes, setClasses, updateClassStatus }) => {
 
 
     const { className, image, price, seats, _id, status, email } = singleClass || {};
 
+  
 
 
     return (
@@ -23,11 +24,11 @@ const ManageClassesRow = ({ singleClass, index, classes, setClasses }) => {
             </td>
             <td >
                 <div className='md:flex flex-col items-center w-fit mx-auto'>
-                    <img src={singleClass?.teacher?.image} className="mask mask-squircle w-20"  />
+                    <img src={singleClass?.teacher?.image} className="mask mask-squircle w-20" />
                     <h1 className=' text-slate-700 w-fit px-14 text-sm font-bold rounded-b-md'>{email}</h1>
                 </div>
             </td>
-        
+
             <td>
                 {seats}
             </td>
@@ -38,14 +39,20 @@ const ManageClassesRow = ({ singleClass, index, classes, setClasses }) => {
                 <p className={`${status === 'pending' && 'bg-yellow-300 px-3 rounded-full mx-auto w-fit'} ${status === 'approved' && 'bg-green-300 px-3 rounded-full mx-auto w-fit'} ${status === 'denied' && 'bg-red-300 px-3 rounded-full mx-auto w-fit'}`}>{status}</p>
             </td>
             <td className='space-y-5'>
-                <button className=' bg-green-400  text-white btn btn-circle  tooltip-left tooltip flex tooltip-success' data-tip="Approve" disabled={status === 'approved' && true}>
+                <button
+                    onClick={() => updateClassStatus('approved', _id)}
+                    className=' bg-green-400  text-white btn btn-circle  tooltip-left tooltip flex tooltip-success' data-tip="Approve" disabled={status === 'approved' && true}>
                     <BiCheck size={33} />
                 </button>
-                <button className=' bg-red-400 text-white btn btn-circle tooltip-left tooltip flex tooltip-warning ' data-tip="Deny" disabled={status === 'approved' && true}>
+                <button
+                    onClick={() => updateClassStatus('denied', _id)}
+                    className=' bg-red-400 text-white btn btn-circle tooltip-left tooltip flex tooltip-warning ' data-tip="Deny" disabled={status === 'denied' && true}>
                     <RxCross2 size={27} />
                 </button>
-                <button className=' bg-blue-400 text-white btn btn-circle tooltip-left tooltip flex tooltip-info ' data-tip="Feedback">
-                    <MdFeedback size={23}/>
+                <button
+
+                    className=' bg-blue-400 text-white btn btn-circle tooltip-left tooltip flex tooltip-info ' data-tip="Feedback">
+                    <MdFeedback size={23} />
                 </button>
             </td>
         </tr>

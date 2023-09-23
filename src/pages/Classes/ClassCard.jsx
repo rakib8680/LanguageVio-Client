@@ -56,7 +56,7 @@ const ClassCard = ({ clash }) => {
     return (
         <div className='mb-10 mx-auto ]'>
             {
-                status === 'approved' &&
+                
                 <div className={`card  backdrop-blur-md ${seats ? 'bg-white bg-opacity-20' : 'bg-red-200 cursor-not-allowed border-red-600'} shadow-md border-slate-400 border w-96 p-5 md:p-0 rounded-none`}>
                     <figure>
                         <img src={image} className="w-full h-[250px] rounded-lg md:rounded-none mask mask-hexagon mt-3" />
