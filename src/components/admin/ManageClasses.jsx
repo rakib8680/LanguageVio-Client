@@ -25,7 +25,7 @@ const ManageClasses = () => {
         fetch(`${import.meta.env.VITE_API_BASE_URL}/${classes}`)
             .then(res => res.json())
             .then(data => setAllClasses(data))
-    }, updateClassStatus)
+    }, [updateClassStatus])
 
 
 
