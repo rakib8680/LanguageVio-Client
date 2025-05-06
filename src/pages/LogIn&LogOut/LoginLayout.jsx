@@ -1,4 +1,3 @@
-import React from 'react';
 import Login from './Login';
 import Lottie from 'lottie-react';
 import loginAnimation from '../../assets/login.json'

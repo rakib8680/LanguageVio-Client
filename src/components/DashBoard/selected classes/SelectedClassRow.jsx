@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import toast from 'react-hot-toast';
 import { FaTrash, FaWallet } from 'react-icons/fa';
@@ -6,7 +8,7 @@ import Swal from 'sweetalert2';
 
 const SelectedClassRow = ({ singleClass, index, classes, setClasses }) => {
 
-    const { className, image, price, seats, _id,name } = singleClass || {};
+    const { className, image, price, seats, _id, name } = singleClass || {};
 
 
 

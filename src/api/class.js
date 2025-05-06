@@ -5,7 +5,6 @@ import axios from "axios";
 // Add a class
 export const addClass = async classData => {
   const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/classes`, classData)
-  console.log(res.data);
   return res.data
 };
 

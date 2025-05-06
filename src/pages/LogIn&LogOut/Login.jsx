@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import{ useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -12,7 +12,7 @@ const Login = () => {
     const [showPass, setShowPass] = useState(false)
     const { signInUser, user, } = useContext(AuthContext)
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
 
 
